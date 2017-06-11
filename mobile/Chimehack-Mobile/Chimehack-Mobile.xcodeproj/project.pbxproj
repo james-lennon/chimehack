@@ -1,0 +1,364 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9D7C5DC61EECC08E00F306A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DC51EECC08E00F306A5 /* AppDelegate.swift */; };
+		9D7C5DC81EECC08E00F306A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DC71EECC08E00F306A5 /* ViewController.swift */; };
+		9D7C5DCB1EECC08E00F306A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D7C5DC91EECC08E00F306A5 /* Main.storyboard */; };
+		9D7C5DCE1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DCC1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodeld */; };
+		9D7C5DD01EECC08E00F306A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7C5DCF1EECC08E00F306A5 /* Assets.xcassets */; };
+		9D7C5DD31EECC08E00F306A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D7C5DD11EECC08E00F306A5 /* LaunchScreen.storyboard */; };
+		9D7C5DDE1EECC16A00F306A5 /* MainCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DDD1EECC16A00F306A5 /* MainCameraController.swift */; };
+		9D7C5DE01EECC17700F306A5 /* SetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DDF1EECC17700F306A5 /* SetupController.swift */; };
+		9D7C5DE21EECC18F00F306A5 /* ImageLookupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DE11EECC18F00F306A5 /* ImageLookupModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9D7C5DC21EECC08E00F306A5 /* Chimehack-Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chimehack-Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D7C5DC51EECC08E00F306A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9D7C5DC71EECC08E00F306A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9D7C5DCA1EECC08E00F306A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9D7C5DCD1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chimehack_Mobile.xcdatamodel; sourceTree = "<group>"; };
+		9D7C5DCF1EECC08E00F306A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9D7C5DD21EECC08E00F306A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9D7C5DD41EECC08E00F306A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D7C5DDD1EECC16A00F306A5 /* MainCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainCameraController.swift; path = Controller/MainCameraController.swift; sourceTree = "<group>"; };
+		9D7C5DDF1EECC17700F306A5 /* SetupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetupController.swift; path = Controller/SetupController.swift; sourceTree = "<group>"; };
+		9D7C5DE11EECC18F00F306A5 /* ImageLookupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLookupModel.swift; path = MOdel/ImageLookupModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D7C5DBF1EECC08E00F306A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9D7C5DB91EECC08E00F306A5 = {
+			isa = PBXGroup;
+			children = (
+				9D7C5DC41EECC08E00F306A5 /* Chimehack-Mobile */,
+				9D7C5DC31EECC08E00F306A5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9D7C5DC31EECC08E00F306A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D7C5DC21EECC08E00F306A5 /* Chimehack-Mobile.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D7C5DC41EECC08E00F306A5 /* Chimehack-Mobile */ = {
+			isa = PBXGroup;
+			children = (
+				9D7C5DDC1EECC14900F306A5 /* Controller */,
+				9D7C5DDB1EECC14500F306A5 /* Model */,
+				9D7C5DDA1EECC09800F306A5 /* View */,
+				9D7C5DC51EECC08E00F306A5 /* AppDelegate.swift */,
+				9D7C5DC71EECC08E00F306A5 /* ViewController.swift */,
+				9D7C5DC91EECC08E00F306A5 /* Main.storyboard */,
+				9D7C5DCF1EECC08E00F306A5 /* Assets.xcassets */,
+				9D7C5DD11EECC08E00F306A5 /* LaunchScreen.storyboard */,
+				9D7C5DD41EECC08E00F306A5 /* Info.plist */,
+				9D7C5DCC1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodeld */,
+			);
+			path = "Chimehack-Mobile";
+			sourceTree = "<group>";
+		};
+		9D7C5DDA1EECC09800F306A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9D7C5DDB1EECC14500F306A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9D7C5DE11EECC18F00F306A5 /* ImageLookupModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9D7C5DDC1EECC14900F306A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9D7C5DDD1EECC16A00F306A5 /* MainCameraController.swift */,
+				9D7C5DDF1EECC17700F306A5 /* SetupController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9D7C5DC11EECC08E00F306A5 /* Chimehack-Mobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D7C5DD71EECC08E00F306A5 /* Build configuration list for PBXNativeTarget "Chimehack-Mobile" */;
+			buildPhases = (
+				9D7C5DBE1EECC08E00F306A5 /* Sources */,
+				9D7C5DBF1EECC08E00F306A5 /* Frameworks */,
+				9D7C5DC01EECC08E00F306A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Chimehack-Mobile";
+			productName = "Chimehack-Mobile";
+			productReference = 9D7C5DC21EECC08E00F306A5 /* Chimehack-Mobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9D7C5DBA1EECC08E00F306A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "James Lennon";
+				TargetAttributes = {
+					9D7C5DC11EECC08E00F306A5 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = AB4XV24HJZ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9D7C5DBD1EECC08E00F306A5 /* Build configuration list for PBXProject "Chimehack-Mobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9D7C5DB91EECC08E00F306A5;
+			productRefGroup = 9D7C5DC31EECC08E00F306A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9D7C5DC11EECC08E00F306A5 /* Chimehack-Mobile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9D7C5DC01EECC08E00F306A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D7C5DD31EECC08E00F306A5 /* LaunchScreen.storyboard in Resources */,
+				9D7C5DD01EECC08E00F306A5 /* Assets.xcassets in Resources */,
+				9D7C5DCB1EECC08E00F306A5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9D7C5DBE1EECC08E00F306A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D7C5DCE1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodeld in Sources */,
+				9D7C5DC81EECC08E00F306A5 /* ViewController.swift in Sources */,
+				9D7C5DC61EECC08E00F306A5 /* AppDelegate.swift in Sources */,
+				9D7C5DE01EECC17700F306A5 /* SetupController.swift in Sources */,
+				9D7C5DDE1EECC16A00F306A5 /* MainCameraController.swift in Sources */,
+				9D7C5DE21EECC18F00F306A5 /* ImageLookupModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9D7C5DC91EECC08E00F306A5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D7C5DCA1EECC08E00F306A5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9D7C5DD11EECC08E00F306A5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D7C5DD21EECC08E00F306A5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9D7C5DD51EECC08E00F306A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9D7C5DD61EECC08E00F306A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9D7C5DD81EECC08E00F306A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AB4XV24HJZ;
+				INFOPLIST_FILE = "Chimehack-Mobile/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jameslennon.Chimehack-Mobile";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9D7C5DD91EECC08E00F306A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AB4XV24HJZ;
+				INFOPLIST_FILE = "Chimehack-Mobile/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jameslennon.Chimehack-Mobile";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9D7C5DBD1EECC08E00F306A5 /* Build configuration list for PBXProject "Chimehack-Mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D7C5DD51EECC08E00F306A5 /* Debug */,
+				9D7C5DD61EECC08E00F306A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D7C5DD71EECC08E00F306A5 /* Build configuration list for PBXNativeTarget "Chimehack-Mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D7C5DD81EECC08E00F306A5 /* Debug */,
+				9D7C5DD91EECC08E00F306A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9D7C5DCC1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9D7C5DCD1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodel */,
+			);
+			currentVersion = 9D7C5DCD1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodel */;
+			path = Chimehack_Mobile.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9D7C5DBA1EECC08E00F306A5 /* Project object */;
+}
