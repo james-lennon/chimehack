@@ -1,0 +1,6 @@
+framework module Pods_Chimehack_Mobile {
+  umbrella header "Pods-Chimehack-Mobile-umbrella.h"
+
+  export *
+  module * { export * }
+}

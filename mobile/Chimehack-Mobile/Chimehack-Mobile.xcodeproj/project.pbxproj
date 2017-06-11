@@ -16,9 +16,13 @@
 		9D7C5DDE1EECC16A00F306A5 /* MainCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DDD1EECC16A00F306A5 /* MainCameraController.swift */; };
 		9D7C5DE01EECC17700F306A5 /* SetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DDF1EECC17700F306A5 /* SetupController.swift */; };
 		9D7C5DE21EECC18F00F306A5 /* ImageLookupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DE11EECC18F00F306A5 /* ImageLookupModel.swift */; };
+		9D7C5DE41EECC62300F306A5 /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DE31EECC62300F306A5 /* LanguageModel.swift */; };
+		E4181F5180A4B5C02431EC90 /* Pods_Chimehack_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF05866A26FFDAFEEE2DE08D /* Pods_Chimehack_Mobile.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2376E989F91C3FFCB984EDD0 /* Pods-Chimehack-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chimehack-Mobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chimehack-Mobile/Pods-Chimehack-Mobile.release.xcconfig"; sourceTree = "<group>"; };
+		7D53A0D57C1B3912AA9B97F0 /* Pods-Chimehack-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chimehack-Mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chimehack-Mobile/Pods-Chimehack-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		9D7C5DC21EECC08E00F306A5 /* Chimehack-Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chimehack-Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7C5DC51EECC08E00F306A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D7C5DC71EECC08E00F306A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +34,8 @@
 		9D7C5DDD1EECC16A00F306A5 /* MainCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainCameraController.swift; path = Controller/MainCameraController.swift; sourceTree = "<group>"; };
 		9D7C5DDF1EECC17700F306A5 /* SetupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetupController.swift; path = Controller/SetupController.swift; sourceTree = "<group>"; };
 		9D7C5DE11EECC18F00F306A5 /* ImageLookupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLookupModel.swift; path = MOdel/ImageLookupModel.swift; sourceTree = "<group>"; };
+		9D7C5DE31EECC62300F306A5 /* LanguageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguageModel.swift; path = Model/LanguageModel.swift; sourceTree = "<group>"; };
+		BF05866A26FFDAFEEE2DE08D /* Pods_Chimehack_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chimehack_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +43,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4181F5180A4B5C02431EC90 /* Pods_Chimehack_Mobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BC63B6CDEDE7DC30E519D67 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D53A0D57C1B3912AA9B97F0 /* Pods-Chimehack-Mobile.debug.xcconfig */,
+				2376E989F91C3FFCB984EDD0 /* Pods-Chimehack-Mobile.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9D7C5DB91EECC08E00F306A5 = {
 			isa = PBXGroup;
 			children = (
 				9D7C5DC41EECC08E00F306A5 /* Chimehack-Mobile */,
 				9D7C5DC31EECC08E00F306A5 /* Products */,
+				5BC63B6CDEDE7DC30E519D67 /* Pods */,
+				CAF2F2641FFF01B2670622AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				9D7C5DE11EECC18F00F306A5 /* ImageLookupModel.swift */,
+				9D7C5DE31EECC62300F306A5 /* LanguageModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -100,6 +119,14 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		CAF2F2641FFF01B2670622AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF05866A26FFDAFEEE2DE08D /* Pods_Chimehack_Mobile.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D7C5DD71EECC08E00F306A5 /* Build configuration list for PBXNativeTarget "Chimehack-Mobile" */;
 			buildPhases = (
+				E8B6B5AA8B99A917DF4723B9 /* [CP] Check Pods Manifest.lock */,
 				9D7C5DBE1EECC08E00F306A5 /* Sources */,
 				9D7C5DBF1EECC08E00F306A5 /* Frameworks */,
 				9D7C5DC01EECC08E00F306A5 /* Resources */,
+				55D01CAA32D87FA1E75EEF84 /* [CP] Embed Pods Frameworks */,
+				012F8E3647255A025E8EAAEC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,6 +198,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		012F8E3647255A025E8EAAEC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chimehack-Mobile/Pods-Chimehack-Mobile-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55D01CAA32D87FA1E75EEF84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chimehack-Mobile/Pods-Chimehack-Mobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8B6B5AA8B99A917DF4723B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9D7C5DBE1EECC08E00F306A5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -175,6 +253,7 @@
 			files = (
 				9D7C5DCE1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodeld in Sources */,
 				9D7C5DC81EECC08E00F306A5 /* ViewController.swift in Sources */,
+				9D7C5DE41EECC62300F306A5 /* LanguageModel.swift in Sources */,
 				9D7C5DC61EECC08E00F306A5 /* AppDelegate.swift in Sources */,
 				9D7C5DE01EECC17700F306A5 /* SetupController.swift in Sources */,
 				9D7C5DDE1EECC16A00F306A5 /* MainCameraController.swift in Sources */,
@@ -301,6 +380,7 @@
 		};
 		9D7C5DD81EECC08E00F306A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D53A0D57C1B3912AA9B97F0 /* Pods-Chimehack-Mobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AB4XV24HJZ;
@@ -314,6 +394,7 @@
 		};
 		9D7C5DD91EECC08E00F306A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2376E989F91C3FFCB984EDD0 /* Pods-Chimehack-Mobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AB4XV24HJZ;
@@ -344,6 +425,7 @@
 				9D7C5DD91EECC08E00F306A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

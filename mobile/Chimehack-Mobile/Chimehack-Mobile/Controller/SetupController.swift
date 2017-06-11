@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import UIKit
+
+class SetupController: UIViewController {
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.white
+        
+    }
+    
+}
