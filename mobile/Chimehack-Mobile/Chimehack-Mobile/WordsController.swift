@@ -34,7 +34,7 @@ class WordsController: UIViewController {
         backButton.snp.makeConstraints { (make) in
             make.width.height.equalTo(30)
             make.top.equalTo(self.view).offset(30)
-            make.right.equalTo(self.view).inset(20)
+            make.left.equalTo(self.view).offset(20)
         }
         
         view.addSubview(challengeLabel)
@@ -44,6 +44,43 @@ class WordsController: UIViewController {
         challengeLabel.snp.makeConstraints { (make) in
             make.size.equalTo(challengeLabel)
             make.left.equalTo(view).offset(20)
+            make.top.equalTo(titleView.snp.bottom).offset(20)
+        }
+        
+        let challengeScrollView = UIScrollView()
+        view.addSubview(challengeScrollView)
+        challengeScrollView.backgroundColor = UIColor.green
+        challengeScrollView.snp.makeConstraints { (make) in
+            make.left.right.equalTo(view)
+            make.top.equalTo(challengeLabel.snp.bottom).offset(20)
+            make.height.equalTo(100)
+        }
+        
+        /* Load challenges */
+        BackendModel.sharedInstance.getChallenges { (results) in
+            
+            DispatchQueue.main.async {
+                let views = results.map({ (user, imgData) -> UIView in
+                    
+                    let v = UIView()
+                    v.backgroundColor = UIColor.white
+                    let label = UILabel()
+                    v.addSubview(label)
+                    label.text = "Challenge from \(user)"
+                    label.snp.makeConstraints({ (make) in
+                        make.left.equalTo(v).offset(20)
+                        make.centerY.equalTo(v)
+                    })
+                    
+                    return v
+                })
+                
+                let listView = ListView(subviewList: views, componentHeight: 60)
+                
+                challengeScrollView.addSubview(listView)
+                challengeScrollView.contentSize = CGSize(width: self.view.frame.width, height: CGFloat(60 * views.count))
+            }
+            
         }
     }
     

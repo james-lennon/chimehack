@@ -15,6 +15,7 @@ class BackendModel {
     
     
     private let UPLOAD_URL = "https://39a34bb3.ngrok.io/api/ios/image_recognition"
+    private let CHALLENGE_URL = "https://39a34bb3.ngrok.io/api/ios/challenges"
     
     private var _friends : [Friend]? = nil
     
@@ -83,5 +84,23 @@ class BackendModel {
     public func sendChallenge(image: UIImage, word: String, friends: [String], callback: ()->()) {
         
         callback()
+    }
+    
+    public func getChallenges(callback: @escaping ([(String, String)])->()) {
+        
+        let data = ["username" : username()]
+        
+        Alamofire.request(CHALLENGE_URL, method: .get, parameters: data).responseJSON { responseJSON in
+            
+            if let json = responseJSON.result.value as? [String : Any] {
+                print("JSON: \(json)")
+                
+                callback([])
+//                callback(json)
+            } else {
+                callback([])
+            }
+        }
+        
     }
 }
