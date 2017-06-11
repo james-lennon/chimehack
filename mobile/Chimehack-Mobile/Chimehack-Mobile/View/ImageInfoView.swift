@@ -24,10 +24,19 @@ class ImageInfoView: UIView {
         
         backgroundColor = UIColor.white
         
+        
+        /* Extra Content */
+        
+        
+        
+    }
+    
+    public func setData(word: String) {
+        
         let font = UIFont.systemFont(ofSize: 30)
         
         addSubview(userLangLabel)
-        userLangLabel.text = "Apple"
+        userLangLabel.text = word
         userLangLabel.font = font
         userLangLabel.sizeToFit()
         userLangLabel.snp.makeConstraints { (make) in
@@ -71,11 +80,7 @@ class ImageInfoView: UIView {
             make.height.equalTo(1)
             make.top.equalTo(learnLangLabel.snp.bottom).offset(20)
         }
-        
-        /* Extra Content */
-        
-        
-        
+
     }
     
     required init?(coder aDecoder: NSCoder) {
