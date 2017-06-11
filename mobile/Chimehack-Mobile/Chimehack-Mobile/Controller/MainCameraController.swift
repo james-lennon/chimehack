@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import Photos
+import AVFoundation
 
 enum MainViewMode {
     case camera
@@ -15,7 +17,7 @@ enum MainViewMode {
     case user
 }
 
-class MainCameraController: UIViewController {
+class MainCameraController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     private let cameraButton = CameraButton()
     private let wordsButton = UIButton()
@@ -24,21 +26,47 @@ class MainCameraController: UIViewController {
     private let userController = UserController()
     private let wordsController = WordsController()
     
+    /* Camera stuff */
+    private let pickerController = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         view.backgroundColor = UIColor.white
         
+        #if (arch(i386) || arch(x86_64)) && os(iOS)
+            let DEVICE_IS_SIMULATOR = true
+        #else
+            let DEVICE_IS_SIMULATOR = false
+        #endif
+        
         /* Setup child view controllers */
         
         userController.willMove(toParentViewController: self)
         wordsController.willMove(toParentViewController: self)
+        pickerController.willMove(toParentViewController: self)
         addChildViewController(userController)
         addChildViewController(wordsController)
+        addChildViewController(pickerController)
         userController.didMove(toParentViewController: self)
         wordsController.didMove(toParentViewController: self)
+        pickerController.didMove(toParentViewController: self)
+        
+        view.addSubview(pickerController.view)
+        pickerController.sourceType = DEVICE_IS_SIMULATOR ? .photoLibrary : .camera
+        pickerController.showsCameraControls = false
+        pickerController.delegate = self
+        let translate = CGAffineTransform(translationX: 0.0, y: 71.0); //This slots the preview exactly in the middle of the screen by moving it down 71 points
+        pickerController.cameraViewTransform = translate;
+        
+        let scale = translate.scaledBy(x: 1.333333, y: 1.333333);
+        pickerController.cameraViewTransform = scale;
+        pickerController.view.snp.makeConstraints { (make) in
+            make.edges.equalTo(view)
+        }
         
         view.addSubview(cameraButton)
+        cameraButton.onClick = self.takePicture
         cameraButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(view)
             make.bottom.equalTo(view).offset(-20)
@@ -72,6 +100,7 @@ class MainCameraController: UIViewController {
         view.addSubview(wordsController.view)
         wordsController.view.frame.size = view.frame.size
         wordsController.view.frame.origin = CGPoint(x: view.frame.width, y: 0)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -88,8 +117,7 @@ class MainCameraController: UIViewController {
     
     func userTapped() {
         
-        print(self.userController.view.frame)
-        UIView.animate(withDuration: 0.25) { 
+        UIView.animate(withDuration: 0.25) {
             self.userController.view.frame.origin = CGPoint.zero
         }
         
@@ -97,11 +125,23 @@ class MainCameraController: UIViewController {
     
     func wordsTapped() {
         
-        print(self.wordsController.view.frame)
         UIView.animate(withDuration: 0.25) {
             self.wordsController.view.frame.origin = CGPoint.zero
         }
         
+    }
+    
+    func takePicture() {
+        pickerController.takePicture()
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            let vc = ImageInfoController(image: pickedImage)
+            self.present(vc, animated: false, completion: nil)
+        }
     }
     
 }

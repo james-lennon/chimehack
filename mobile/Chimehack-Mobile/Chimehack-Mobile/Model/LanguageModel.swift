@@ -16,7 +16,8 @@ class LanguageModel {
     private let _languageList = [
         "English",
         "Arabic",
-        "Persian"
+        "Persian",
+        "Lebanese"
     ]
     
     private var _userLanguage : String? = nil

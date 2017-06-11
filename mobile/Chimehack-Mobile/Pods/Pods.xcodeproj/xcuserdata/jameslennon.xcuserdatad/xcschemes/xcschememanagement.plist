@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Chimehack-Mobile.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>89231BAE569C890721D17DF52FA7D4A5</key>
+		<key>0724333E0B7D3D9640C526FCAA06C3DC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B4B32FAA0602EE8E360BA5CB9ED00900</key>
+		<key>4B5FADDBAC5BAB2A579281CE35B82136</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B53BDF0C2C51C879B85E0D3F12261D56</key>
+		<key>879CC522CBAF4B0157F27ACFF8AAA164</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E0AB53FFCDD6CCFFB0EA8763BDCC41A2</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C68CF51F502DDBA77F5A56F6A382C04E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
