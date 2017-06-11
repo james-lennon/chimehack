@@ -1,7 +1,8 @@
 from flask import Flask, request
 from flask.ext.restful import Resource, Api, marshal_with, fields, abort
 from flask_restful_swagger import swagger
-from flask_server.api.image_recognition import ImageRecognitionEndpoint
+from flask_server.api.twilio_rest import TwilioEndpoint
+from flask_server.api.ios_rest import IOSEndpoint
 
 API_VERSION_NUMBER = '1.0'
 API_VERSION_LABEL = 'v1'
@@ -23,8 +24,8 @@ class CustomFlaskApp(object):
         }
         self.api = swagger.docs(Api(self.app, errors=custom_errors), apiVersion=API_VERSION_NUMBER)
         
-        # self.api.add_resource(ImageRecognitionEndpoint, '/api/ios/image_recognition', endpoint='image_recognition')
-        self.api.add_resource(ImageRecognitionEndpoint, '/api/twilio/image_recognition', endpoint='image_recognition')
+        self.api.add_resource(TwilioEndpoint, '/api/twilio/image_recognition', endpoint='twilio_image_recognition')
+        self.api.add_resource(IOSEndpoint, '/api/ios/image_recognition', endpoint='ios_image_recognition')
 
     def run(self, *args, **kwargs):
         self.app.config['PROPAGATE_EXCEPTIONS'] = False
