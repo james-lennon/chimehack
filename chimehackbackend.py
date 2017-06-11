@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import requests
 import resource
 import ast
+import unirest
 
 def getItem():
 	app = ClarifaiApp("pqVhRqjUHu0x0ouWhuRnzTVR9ve1XyqiqQ0hbzal", "sHUtxZ7NRCSfz75EHbTy6Q9fk9-PGCwe3FKth2cV")
@@ -13,6 +14,9 @@ def getItem():
 
 	objectname = response['outputs'][0]['data']['concepts'][0]['name']
 	print objectname
+	return objectname
+
+def getSentence(objectname):
 	url = "http://sentence.yourdictionary.com/" + str(objectname)
 	#url = "http://sentence.yourdictionary.com/apple"
 
@@ -28,8 +32,7 @@ def getItem():
 	firstexample = output[start:end]
 	firstexample = firstexample.replace("<b>","")
 	firstexample = firstexample.replace("</b>","")
-	print firstexample
-	return objectname
+	return firstexample
 
 def getGiphy(objectname):
 	url = "http://api.giphy.com/v1/gifs/search?q=" + str(objectname) + "&api_key=dc6zaTOxFJmzC"
@@ -38,6 +41,14 @@ def getGiphy(objectname):
 	giphy =  mydict['data'][0]['embed_url']
 	return giphy
 
+def getDefinition(objectname):
+	url = "http://www.yourdictionary.com/" + str(objectname)
+	r = requests.get(url)
+	start = r.text.find("definition:")+12
+	definition = r.text[start:]
+	end =  definition.find(".")+1
+	definition = definition[:end]
+	return definition
 
 
 
