@@ -11,15 +11,35 @@ import Alamofire
 
 class BackendModel {
     
-    public let sharedInstance = BackendModel()
+    public static let sharedInstance = BackendModel()
     
-    public func uploadImage(image: UIImage, callback: ()->()) {
+    private var _friends : [Friend]? = nil
+    
+    public func load() {
         
-        
+        getFriends { (list) in
+            self._friends = list
+        }
         
     }
     
-    public func getUserScore() -> Int {
-        return 17
+    public func uploadImage(image: UIImage, callback: ()->()) {
+        
+        callback()
+    }
+    
+    public func getUserScore(callback: (Int?)->()) {
+        
+        callback(17)
+    }
+    
+    public func getFriends(callback: ([Friend]?)->()) {
+        
+        callback([
+            Friend(name: "Eli", score: 3),
+            Friend(name: "Jenny", score: 5),
+            Friend(name: "Madhav", score: 4),
+            Friend(name: "Dan", score: 6)
+            ])
     }
 }

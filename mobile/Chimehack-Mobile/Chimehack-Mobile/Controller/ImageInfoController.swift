@@ -17,6 +17,7 @@ class ImageInfoController: UIViewController {
     private let imageView : UIImageView
     
     private let infoView = ImageInfoView()
+    private let closeButton = UIButton()
     
     private var offsetBeforeDrag : CGFloat = 0
     
@@ -69,6 +70,16 @@ class ImageInfoController: UIViewController {
             make.centerY.equalTo(titleView).offset(10)
         }
         
+        titleView.addSubview(closeButton)
+        closeButton.setImage(#imageLiteral(resourceName: "cancel"), for: .normal)
+        closeButton.imageView?.contentMode = .scaleAspectFit
+        closeButton.addTarget(self, action: #selector(closePressed), for: .touchUpInside)
+        closeButton.snp.makeConstraints { (make) in
+            make.width.height.equalTo(20)
+            make.left.equalTo(titleView).offset(20)
+            make.centerY.equalTo(titleLabel)
+        }
+        
     }
     
     func viewPanned(gestureRecognizer: UIPanGestureRecognizer) {
@@ -103,4 +114,7 @@ class ImageInfoController: UIViewController {
         
     }
     
+    func closePressed() {
+        dismiss(animated: true, completion: nil)
+    }
 }

@@ -41,15 +41,15 @@ class LanguageButton: UIView {
         }
         _checkImage.isHidden = true
         
-        if showBorder {
-            let botBorder = borderView()
-            addSubview(botBorder)
-            botBorder.snp.makeConstraints { (make) in
-                make.left.right.equalTo(self).inset(15)
-                make.height.equalTo(1)
-                make.bottom.equalTo(self).inset(2)
-            }
-        }
+//        if showBorder {
+//            let botBorder = borderView()
+//            addSubview(botBorder)
+//            botBorder.snp.makeConstraints { (make) in
+//                make.left.right.equalTo(self).inset(15)
+//                make.height.equalTo(1)
+//                make.bottom.equalTo(self).inset(2)
+//            }
+//        }
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(self.tapped))
         addGestureRecognizer(tapGR)
