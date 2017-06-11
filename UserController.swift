@@ -68,11 +68,11 @@ class UserController: UIViewController {
         
         let challengesView = UIView()
         view.addSubview(challengesView)
-        challengesView.backgroundColor = UIColor.cyan
+        challengesView.backgroundColor = UIColor.orange
         challengesView.snp.makeConstraints { (make) in
             make.left.equalTo(view)
             make.width.height.equalTo(view.frame.width / 2.0)
-            make.top.equalTo(titleView.snp.bottom)
+            make.bottom.equalTo(titleView.snp.bottom)
         }
         view.addSubview(challengesButton)
         challengesButton.setImage(#imageLiteral(resourceName: "armmuscle"), for: .normal)
@@ -86,11 +86,11 @@ class UserController: UIViewController {
         
         let friendsView = UIView()
         view.addSubview(friendsView)
-        friendsView.backgroundColor = UIColor.cyan
+        friendsView.backgroundColor = UIColor.yellow
         friendsView.snp.makeConstraints { (make) in
-            make.left.equalTo(view)
+            make.right.equalTo(view)
             make.width.height.equalTo(view.frame.width / 2.0)
-            make.top.equalTo(titleView.snp.bottom)
+            make.bottom.equalTo(titleView.snp.bottom)
         }
         view.addSubview(friendsButton)
         friendsButton.setImage(#imageLiteral(resourceName: "dancinggirl"), for: .normal)
