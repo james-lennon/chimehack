@@ -27,7 +27,7 @@ class ImageRecognizer(object):
         model = clarifai_app.models.get("general-v1.3")
 
         if isBase64:
-            image = app.inputs.create_image_from_base64(image_url)
+            image = clarifai_app.inputs.create_image_from_base64(image_url)
         else:
             image = ClImage(url=image_url)
 
@@ -50,9 +50,12 @@ class ImageRecognizer(object):
         returns: first_example (string)
         """
         url = "http://www.yourdictionary.com/" + str(image_name)
+        print(image_name)
         r = requests.get(url)
         tree = html.fromstring(r.text)
-        return tree.xpath('//*[@id="definitions_panel"]/div/div/div[2]/ol/div/text()')[0]
+        definition_path = tree.xpath('//*[@id="definitions_panel"]/div/div/div[2]/ol/div/text()')
+        print(definition_path)
+        return definition_path[0]
 
     def getSentenceExampleFromImageName(self, image_name):
         """
@@ -133,5 +136,4 @@ class ImageRecognizer(object):
         r_dict = json.loads(r.text)
         gif = r_dict['data'][4]['images']['original']['url']
         urllib.urlretrieve(gif, join(join(dirname(os.getcwd()), "server/flask_server/static"), "saved_gif.gif"))
-        print(url_for('static', filename='saved_gif.gif'))
         return url_for('static', filename='saved_gif.gif')
