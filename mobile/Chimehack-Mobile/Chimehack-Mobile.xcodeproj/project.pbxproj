@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9D7C5DC61EECC08E00F306A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DC51EECC08E00F306A5 /* AppDelegate.swift */; };
 		9D7C5DC81EECC08E00F306A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DC71EECC08E00F306A5 /* ViewController.swift */; };
-		9D7C5DCB1EECC08E00F306A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D7C5DC91EECC08E00F306A5 /* Main.storyboard */; };
 		9D7C5DCE1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DCC1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodeld */; };
 		9D7C5DD01EECC08E00F306A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7C5DCF1EECC08E00F306A5 /* Assets.xcassets */; };
 		9D7C5DD31EECC08E00F306A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D7C5DD11EECC08E00F306A5 /* LaunchScreen.storyboard */; };
@@ -17,6 +16,8 @@
 		9D7C5DE01EECC17700F306A5 /* SetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DDF1EECC17700F306A5 /* SetupController.swift */; };
 		9D7C5DE21EECC18F00F306A5 /* ImageLookupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DE11EECC18F00F306A5 /* ImageLookupModel.swift */; };
 		9D7C5DE41EECC62300F306A5 /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DE31EECC62300F306A5 /* LanguageModel.swift */; };
+		9D7C5DE61EECD88100F306A5 /* ViewedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DE51EECD88100F306A5 /* ViewedWord.swift */; };
+		9D7C5DE81EECE01C00F306A5 /* LanguageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DE71EECE01C00F306A5 /* LanguageButton.swift */; };
 		E4181F5180A4B5C02431EC90 /* Pods_Chimehack_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF05866A26FFDAFEEE2DE08D /* Pods_Chimehack_Mobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +27,6 @@
 		9D7C5DC21EECC08E00F306A5 /* Chimehack-Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chimehack-Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7C5DC51EECC08E00F306A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D7C5DC71EECC08E00F306A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9D7C5DCA1EECC08E00F306A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D7C5DCD1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chimehack_Mobile.xcdatamodel; sourceTree = "<group>"; };
 		9D7C5DCF1EECC08E00F306A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D7C5DD21EECC08E00F306A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +35,8 @@
 		9D7C5DDF1EECC17700F306A5 /* SetupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetupController.swift; path = Controller/SetupController.swift; sourceTree = "<group>"; };
 		9D7C5DE11EECC18F00F306A5 /* ImageLookupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLookupModel.swift; path = MOdel/ImageLookupModel.swift; sourceTree = "<group>"; };
 		9D7C5DE31EECC62300F306A5 /* LanguageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguageModel.swift; path = Model/LanguageModel.swift; sourceTree = "<group>"; };
+		9D7C5DE51EECD88100F306A5 /* ViewedWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewedWord.swift; path = Model/ViewedWord.swift; sourceTree = "<group>"; };
+		9D7C5DE71EECE01C00F306A5 /* LanguageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguageButton.swift; path = View/LanguageButton.swift; sourceTree = "<group>"; };
 		BF05866A26FFDAFEEE2DE08D /* Pods_Chimehack_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chimehack_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -85,7 +87,6 @@
 				9D7C5DDA1EECC09800F306A5 /* View */,
 				9D7C5DC51EECC08E00F306A5 /* AppDelegate.swift */,
 				9D7C5DC71EECC08E00F306A5 /* ViewController.swift */,
-				9D7C5DC91EECC08E00F306A5 /* Main.storyboard */,
 				9D7C5DCF1EECC08E00F306A5 /* Assets.xcassets */,
 				9D7C5DD11EECC08E00F306A5 /* LaunchScreen.storyboard */,
 				9D7C5DD41EECC08E00F306A5 /* Info.plist */,
@@ -97,6 +98,7 @@
 		9D7C5DDA1EECC09800F306A5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9D7C5DE71EECE01C00F306A5 /* LanguageButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -106,6 +108,7 @@
 			children = (
 				9D7C5DE11EECC18F00F306A5 /* ImageLookupModel.swift */,
 				9D7C5DE31EECC62300F306A5 /* LanguageModel.swift */,
+				9D7C5DE51EECD88100F306A5 /* ViewedWord.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -192,7 +195,6 @@
 			files = (
 				9D7C5DD31EECC08E00F306A5 /* LaunchScreen.storyboard in Resources */,
 				9D7C5DD01EECC08E00F306A5 /* Assets.xcassets in Resources */,
-				9D7C5DCB1EECC08E00F306A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +243,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -254,6 +256,8 @@
 				9D7C5DCE1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodeld in Sources */,
 				9D7C5DC81EECC08E00F306A5 /* ViewController.swift in Sources */,
 				9D7C5DE41EECC62300F306A5 /* LanguageModel.swift in Sources */,
+				9D7C5DE61EECD88100F306A5 /* ViewedWord.swift in Sources */,
+				9D7C5DE81EECE01C00F306A5 /* LanguageButton.swift in Sources */,
 				9D7C5DC61EECC08E00F306A5 /* AppDelegate.swift in Sources */,
 				9D7C5DE01EECC17700F306A5 /* SetupController.swift in Sources */,
 				9D7C5DDE1EECC16A00F306A5 /* MainCameraController.swift in Sources */,
@@ -264,14 +268,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9D7C5DC91EECC08E00F306A5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9D7C5DCA1EECC08E00F306A5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9D7C5DD11EECC08E00F306A5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -385,6 +381,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AB4XV24HJZ;
 				INFOPLIST_FILE = "Chimehack-Mobile/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jameslennon.Chimehack-Mobile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -399,6 +396,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AB4XV24HJZ;
 				INFOPLIST_FILE = "Chimehack-Mobile/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jameslennon.Chimehack-Mobile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
