@@ -7,6 +7,9 @@ from flask import Response
 from twilio.twiml.messaging_response import MessagingResponse, Message
 from twilio.rest import Client
 from bs4 import BeautifulSoup
+from clarifai import rest
+from clarifai.rest import ClarifaiApp
+from clarifai.rest import Image as ClImage
 import requests
 import resource
 import ast
@@ -26,29 +29,28 @@ class ImageRecognitionEndpoint(Resource):
         Lightweight response to let us confirm that the server is on-line"""
         # from_number = request.values.get('From', None)
         image_url = request.values.get('MediaUrl0', None)
+
         print(request.values)
-        # msg = Message().body("Hello, Mobile Monkey").media("https://demo.twilio.com/owl.png")
+        object_name = getImageRecognition(image_url)
 
-
-        # resp = MessagingResponse().message("Hello, Mobile Monkey")
-        # message = client.api.account.messages.create(to=from_number,
-        #                                              from_="+14157671750",
-        #                                              body="Hello there!")
+        resp = MessagingResponse().message(object_name)
         return Response(str(resp), mimetype='application/xml')
 
 def getImageRecognition(image_url):
-    app = ClarifaiApp("pqVhRqjUHu0x0ouWhuRnzTVR9ve1XyqiqQ0hbzal", "sHUtxZ7NRCSfz75EHbTy6Q9fk9-PGCwe3FKth2cV")
-    model = app.models.get("general-v1.3")
+    clarifai_app = ClarifaiApp("pqVhRqjUHu0x0ouWhuRnzTVR9ve1XyqiqQ0hbzal", "sHUtxZ7NRCSfz75EHbTy6Q9fk9-PGCwe3FKth2cV")
+    model = clarifai_app.models.get("general-v1.3")
     image = ClImage(url=image_url)
-    model.predict([image])
+    response = model.predict([image])
 
-    objectname = response['outputs'][0]['data']['concepts'][0]['name']
-    url = "http://sentence.yourdictionary.com/" + str(objectname)
+    image_name = response['outputs'][0]['data']['concepts'][0]['name']
+    sentence_example = getSentenceExampleFromImageName(image_name)
+    return (image_name, firstexample)
 
+def getSentenceExampleFromImageName(image_name):
+    url = "http://sentence.yourdictionary.com/" + str(image_name)
     rsrc = resource.RLIMIT_DATA
     soft, hard = resource.getrlimit(rsrc)
     resource.setrlimit(rsrc, (1024*1024*500, hard))
-
     r = requests.get(url)
     soup = BeautifulSoup(r.text, 'html.parser')
     output = str(soup.find(id="examples-ul-content"))
@@ -57,11 +59,10 @@ def getImageRecognition(image_url):
     firstexample = output[start:end]
     firstexample = firstexample.replace("<b>","")
     firstexample = firstexample.replace("</b>","")
-    print firstexample
-    return objectname
+    return firstexample
 
-def getGiphy(objectname):
-    url = "http://api.giphy.com/v1/gifs/search?q=" + str(objectname) + "&api_key=dc6zaTOxFJmzC"
+def getGiphy(image_name):
+    url = "http://api.giphy.com/v1/gifs/search?q=" + str(image_name) + "&api_key=dc6zaTOxFJmzC"
     r = requests.get(url)
     mydict = ast.literal_eval(r.text)
     giphy =  mydict['data'][0]['embed_url']
