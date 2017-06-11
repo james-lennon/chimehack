@@ -15,7 +15,7 @@ class BackendModel {
     
     
     private let UPLOAD_URL = "https://39a34bb3.ngrok.io/api/ios/image_recognition"
-    private let CHALLENGE_URL = "https://39a34bb3.ngrok.io/api/ios/challenges"
+    private let CHALLENGE_URL = "https://39a34bb3.ngrok.io/api/get/challenge"
     
     private var _friends : [Friend]? = nil
     

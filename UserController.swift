@@ -70,9 +70,9 @@ class UserController: UIViewController {
         view.addSubview(challengesView)
         challengesView.backgroundColor = UIColor.orange
         challengesView.snp.makeConstraints { (make) in
-            make.left.equalTo(view)
-            make.width.height.equalTo(view.frame.width / 2.0)
-            make.bottom.equalTo(titleView.snp.bottom)
+            make.left.bottom.equalTo(view)
+            make.top.equalTo(pointsView.snp.bottom)
+            make.width.equalTo(view.frame.width / 2.0)
         }
         view.addSubview(challengesButton)
         challengesButton.setImage(#imageLiteral(resourceName: "armmuscle"), for: .normal)

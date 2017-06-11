@@ -83,7 +83,38 @@ class WordsController: UIViewController {
             
         }
         
-//        let _ = DatabaseModel.sharedInstance.viewedWords()
+        let wordsLabel = UILabel()
+        wordsLabel.text = "Words:"
+        wordsLabel.font = UIFont.systemFont(ofSize: 30)
+        wordsLabel.sizeToFit()
+        view.addSubview(wordsLabel)
+        wordsLabel.snp.makeConstraints { (make) in
+            make.left.right.equalTo(view)
+            make.size.equalTo(view)
+            make.top.equalTo(challengeScrollView.snp.bottom).offset(10)
+        }
+        
+        let wordViewList = DatabaseModel.sharedInstance.viewedWords().map { (viewedWord) -> UIView in
+            let v = UIView()
+            let label = UILabel()
+            v.addSubview(label)
+            label.text = viewedWord.word
+            label.sizeToFit()
+            label.snp.makeConstraints({ (make) in
+                make.left.equalTo(v).offset(20)
+                make.centerY.equalTo(v)
+                make.size.equalTo(label)
+            })
+            
+            return v
+        }
+        
+//        let wordsView = ListView(subviewList: wordViewList, componentHeight: 60)
+//        view.addSubview(wordsView)
+//        wordsView.snp.makeConstraints { (make) in
+//            make.left.right.bottom.equalTo(view)
+//            make.top.equalTo(wordsLabel.snp.bottom).offset(10)
+//        }
     }
     
     func backPressed() {
