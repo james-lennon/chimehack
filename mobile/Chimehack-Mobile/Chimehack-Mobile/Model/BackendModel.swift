@@ -38,23 +38,27 @@ class BackendModel {
         return newImage!
     }
     
-    public func uploadImage(image: UIImage, callback: (String)->()) {
+    public func uploadImage(image: UIImage, callback: @escaping ([String: Any])->()) {
         
-        let imageData:Data = UIImagePNGRepresentation(resizeImage(image: image, newWidth: 600))!
+        let imageData:Data = UIImagePNGRepresentation(resizeImage(image: image, newWidth: 200))!
         let strBase64:String = imageData.base64EncodedString()
         
-        print(strBase64)
+//        print(strBase64)
         
         let data = ["media_url" : strBase64, "target_language": LanguageModel.sharedInstance.userLanguage()]
         
         Alamofire.request(UPLOAD_URL, method: .post, parameters: data).responseJSON { responseJSON in
             
-            if let json = responseJSON.result.value {
+            if let json = responseJSON.result.value as? [String : Any] {
                 print("JSON: \(json)")
+                
+                callback(json)
+            } else {
+                callback(["word": "ERROR"])
             }
         }
         
-        callback("ASDFASDF")
+        
     }
     
     public func getUserScore(callback: (Int?)->()) {
