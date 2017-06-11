@@ -7,7 +7,6 @@ from flask import Response
 from bs4 import BeautifulSoup
 from .image_recognition import ImageRecognizer
 
-
 class IOSEndpoint(Resource):
     def post(self):
         """
