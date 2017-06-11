@@ -100,8 +100,9 @@ class SetupController: UIViewController {
             showSecondLanguageSelection()
             _isSelectingUserLanguage = false
         } else {
+            
             /* Move on */
-            dismiss(animated: true, completion: nil)
+            navigationController?.dismiss(animated: true, completion: nil)
         }
     }
     
