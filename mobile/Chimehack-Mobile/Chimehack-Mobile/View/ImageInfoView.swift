@@ -33,7 +33,11 @@ class ImageInfoView: UIView {
     
     public func setData(data: [String : Any]) {
         
-        let word = data["vocab"] as? String ?? ""
+        var word = data["vocab"] as? String ?? ""
+        if word == "no person" {
+            word = "no hotdog"
+        }
+        
 //        let sentence = data["sentence"] as? String ?? ""
 //        let gif = data["giphy_url"] as? String ?? ""
         

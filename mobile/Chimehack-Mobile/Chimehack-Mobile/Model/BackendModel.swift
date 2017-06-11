@@ -40,10 +40,10 @@ class BackendModel {
     
     public func uploadImage(image: UIImage, callback: @escaping ([String: Any])->()) {
         
-        let imageData:Data = UIImagePNGRepresentation(resizeImage(image: image, newWidth: 200))!
+        let imageData:Data = UIImagePNGRepresentation(resizeImage(image: image, newWidth: 100))!
         let strBase64:String = imageData.base64EncodedString()
         
-//        print(strBase64)
+        print(strBase64)
         
         let data = ["media_url" : strBase64, "target_language": LanguageModel.sharedInstance.userLanguage()]
         
