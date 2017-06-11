@@ -19,6 +19,6 @@ class IOSEndpoint(Resource):
         image_url = request.values.form['media_url']
         target_language = request.values.form['target_language']
         image_recognition = getImageRecognition(image_url, target_language, isBase64=True)
-        image_recognition_fields = ['vocab', 'translated_vocab', 'sentence', 'translated_sentence', 'giphy_url']
+        image_recognition_fields = ['vocab', 't_vocab', 'definition', 't_definition', 'sentence', 't_sentence', 'giphy_url']
         result = dict(zip(image_recognition_fields, image_recognition))
         return jsonify(result)

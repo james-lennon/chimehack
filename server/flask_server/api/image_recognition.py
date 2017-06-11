@@ -4,6 +4,7 @@ from clarifai import rest
 from clarifai.rest import ClarifaiApp
 from clarifai.rest import Image as ClImage
 from os.path import dirname, join
+from lxml import html
 import requests
 import resource
 import ast
@@ -34,10 +35,24 @@ class ImageRecognizer(object):
 
         image_name = response['outputs'][0]['data']['concepts'][0]['name']
         t_image_name = self.getTranslatedImageName(image_name, target_language)
+        definition = self.getDefinition(image_name)
+        t_definition = self.getTranslatedDefinition(definition, target_language)
         sentence_example = self.getSentenceExampleFromImageName(image_name)
         t_sentence_example = self.getTranslatedSentenceExample(sentence_example, target_language)
         giphy_example = self.getGiphy(image_name)
-        return (image_name, t_image_name, sentence_example, t_sentence_example, giphy_example)
+        return (image_name, t_image_name, definition, t_definition, sentence_example, t_sentence_example, giphy_example)
+
+    def getDefinition(self, image_name):
+        """
+        Return a sentence example given an image name
+
+        params: image_name (string)
+        returns: first_example (string)
+        """
+        url = "http://www.yourdictionary.com/" + str(image_name)
+        r = requests.get(url)
+        tree = html.fromstring(r.text)
+        return tree.xpath('//*[@id="definitions_panel"]/div/div/div[2]/ol/div/text()')[0]
 
     def getSentenceExampleFromImageName(self, image_name):
         """
@@ -66,6 +81,18 @@ class ImageRecognizer(object):
         returns: giphy (string)
         """
         url = self.generateTranslationURL(image_name, target_language)
+        r = requests.get(url)
+        r_dict = json.loads(r.text)
+        return r_dict['data']['translations'][0]['translatedText']
+
+    def getTranslatedDefinition(self, definition, target_language):
+        """
+        Return the giphy URL (ending in .gif)
+
+        params: image_name (string)
+        returns: giphy (string)
+        """
+        url = self.generateTranslationURL(definition, target_language)
         r = requests.get(url)
         r_dict = json.loads(r.text)
         return r_dict['data']['translations'][0]['translatedText']
@@ -106,4 +133,5 @@ class ImageRecognizer(object):
         r_dict = json.loads(r.text)
         gif = r_dict['data'][4]['images']['original']['url']
         urllib.urlretrieve(gif, join(join(dirname(os.getcwd()), "server/flask_server/static"), "saved_gif.gif"))
+        print(url_for('static', filename='saved_gif.gif'))
         return url_for('static', filename='saved_gif.gif')

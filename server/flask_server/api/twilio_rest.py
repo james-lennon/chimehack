@@ -26,12 +26,14 @@ class TwilioEndpoint(Resource):
         image_url = request.values.get('MediaUrl0', None)
         target_language = 'es'
         image_recognition = image_recognizer.getImageRecognition(image_url, target_language)
-        image_name, t_image_name, sentence_example, t_sentence_example, giphy_example = image_recognition
+        image_name, t_image_name, definition, t_definition, sentence_example, t_sentence_example, giphy_example = image_recognition
 
         resp = MessagingResponse()
         message_parts = []
         message_parts.append(Message().body("Vocab Term: " + image_name + " "))
         message_parts.append(Message().body("Translated Term: " + t_image_name + " "))
+        message_parts.append(Message().body("Definition: " + definition + " "))
+        message_parts.append(Message().body("Translated Definition: " + t_definition + " "))
         message_parts.append(Message().body("Sentence Example: " + sentence_example + " "))
         message_parts.append(Message().body("Translated Sentence: " + t_sentence_example + " "))
         message_parts.append(Message().media(giphy_example))
