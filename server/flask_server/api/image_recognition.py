@@ -19,21 +19,23 @@ auth_token = "AC50b61476ea3fad16b180926f5821b942"
 client = Client(account_sid, auth_token)
 
 class ImageRecognitionEndpoint(Resource):
-    # @swagger.operation(
-    #     responseClass=DummyResult.__name__,
-    #     nickname='dummy')
-
     def get(self):
         """Return a DummyResult object
 
         Lightweight response to let us confirm that the server is on-line"""
-        # from_number = request.values.get('From', None)
         image_url = request.values.get('MediaUrl0', None)
+        image_name, sentence_example, giphy_example = getImageRecognition(image_url)
 
-        print(request.values)
-        object_name = getImageRecognition(image_url)
+        resp = MessagingResponse()
+        message_parts = []
+        message_parts.append(Message().body("Vocab Term: " + image_name + " "))
+        message_parts.append(Message().body("Sentence Example: " + sentence_example + " "))
+        giphy_adjusted = giphy_example.replace("\\", "")
+        message_parts.append(Message().media(giphy_adjusted))
+        print(giphy_adjusted)
 
-        resp = MessagingResponse().message(object_name)
+        for message_part in message_parts:
+            resp.append(message_part)
         return Response(str(resp), mimetype='application/xml')
 
 def getImageRecognition(image_url):
@@ -44,7 +46,8 @@ def getImageRecognition(image_url):
 
     image_name = response['outputs'][0]['data']['concepts'][0]['name']
     sentence_example = getSentenceExampleFromImageName(image_name)
-    return (image_name, firstexample)
+    giphy_example = getGiphy(image_name)
+    return (image_name, sentence_example, giphy_example)
 
 def getSentenceExampleFromImageName(image_name):
     url = "http://sentence.yourdictionary.com/" + str(image_name)
@@ -56,14 +59,14 @@ def getSentenceExampleFromImageName(image_name):
     output = str(soup.find(id="examples-ul-content"))
     start = output.find("li_content")+12
     end =  output.find("</div>")
-    firstexample = output[start:end]
-    firstexample = firstexample.replace("<b>","")
-    firstexample = firstexample.replace("</b>","")
-    return firstexample
+    first_example = output[start:end]
+    first_example = first_example.replace("<b>","")
+    first_example = first_example.replace("</b>","")
+    return first_example
 
 def getGiphy(image_name):
     url = "http://api.giphy.com/v1/gifs/search?q=" + str(image_name) + "&api_key=dc6zaTOxFJmzC"
     r = requests.get(url)
     mydict = ast.literal_eval(r.text)
-    giphy =  mydict['data'][0]['embed_url']
+    giphy = mydict['data'][0]['embed_url']
     return giphy

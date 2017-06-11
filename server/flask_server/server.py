@@ -23,7 +23,7 @@ class CustomFlaskApp(object):
         }
         self.api = swagger.docs(Api(self.app, errors=custom_errors), apiVersion=API_VERSION_NUMBER)
         
-        self.api.add_resource(ImageRecognitionEndpoint, '/api/ios/image_recognition', endpoint='image_recognition')
+        # self.api.add_resource(ImageRecognitionEndpoint, '/api/ios/image_recognition', endpoint='image_recognition')
         self.api.add_resource(ImageRecognitionEndpoint, '/api/twilio/image_recognition', endpoint='image_recognition')
 
     def run(self, *args, **kwargs):
