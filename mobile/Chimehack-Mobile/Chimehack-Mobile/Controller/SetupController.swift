@@ -58,38 +58,6 @@ class SetupController: UIViewController {
         let languagesView = ListView(subviewList: languageButtons, componentHeight: LANG_HEIGHT)
         view.addSubview(languagesView)
         
-//        var lastView : LanguageButton? = nil
-//        
-//        let lst = LanguageModel.sharedInstance.languages()
-//        
-//        for (index, language) in lst.enumerated() {
-//            
-//            let langView = LanguageButton(language: language, showBorder: index < lst.count - 1)
-//            languagesView.addSubview(langView)
-//            
-//            langView.snp.makeConstraints({ (make) in
-//                make.left.right.equalTo(languagesView)
-//                make.height.equalTo(LANG_HEIGHT)
-//                
-//                if let lv = lastView {
-//                    make.top.equalTo(lv.snp.bottom)
-//                } else {
-//                    make.top.equalTo(languagesView)
-//                }
-//            })
-//            
-//            langView.onClick = { selected in
-//                
-//                if !selected {
-//                    self.handleLanguageSelection(language: language)
-//                }
-//                
-//            }
-//            
-//            lastView = langView
-//            
-//        }
-        
         languagesView.snp.makeConstraints { (make) in
             make.centerY.equalTo(view)
             make.left.right.equalTo(view)

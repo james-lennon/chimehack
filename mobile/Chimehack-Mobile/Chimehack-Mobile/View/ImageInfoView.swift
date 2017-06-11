@@ -14,7 +14,11 @@ class ImageInfoView: UIView {
     private let learnLangLabel = UILabel()
     private let sendButton = UIButton()
     
-    init() {
+    private let onSend : ()->()
+    
+    init(onSend: @escaping ()->()) {
+        
+        self.onSend = onSend
         
         super.init(frame: CGRect.zero)
         
@@ -79,7 +83,7 @@ class ImageInfoView: UIView {
     }
     
     func sendPressed() {
-        
+        onSend()
     }
     
 }
