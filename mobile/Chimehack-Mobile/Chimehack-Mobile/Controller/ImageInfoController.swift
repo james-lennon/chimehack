@@ -16,19 +16,21 @@ class ImageInfoController: UIViewController {
     private let image : UIImage
     private let imageView : UIImageView
     
-    private let infoView = ImageInfoView()
+    private var infoView : ImageInfoView! = nil
     private let closeButton = UIButton()
     
     private var offsetBeforeDrag : CGFloat = 0
+    
+    private var word: String? = nil
     
     init(image: UIImage) {
         
         self.image = image
         self.imageView = UIImageView(image: image)
-        
-        print(self.image.size)
-        
+                
         super.init(nibName: nil, bundle: nil)
+        
+        self.infoView = ImageInfoView(onSend: self.sendPressed)
         
     }
     
@@ -116,5 +118,10 @@ class ImageInfoController: UIViewController {
     
     func closePressed() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func sendPressed() {
+        let vc = SendController(image: self.image, word: self.word ?? "")
+        present(vc, animated: true, completion: nil)
     }
 }

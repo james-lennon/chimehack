@@ -42,4 +42,9 @@ class BackendModel {
             Friend(name: "Dan", score: 6)
             ])
     }
+    
+    public func sendChallenge(image: UIImage, word: String, friends: [String], callback: ()->()) {
+        
+        callback()
+    }
 }
