@@ -31,7 +31,11 @@ class ImageInfoView: UIView {
         
     }
     
-    public func setData(word: String) {
+    public func setData(data: [String : Any]) {
+        
+        let word = data["vocab"] as? String ?? ""
+//        let sentence = data["sentence"] as? String ?? ""
+//        let gif = data["giphy_url"] as? String ?? ""
         
         let font = UIFont.systemFont(ofSize: 30)
         
