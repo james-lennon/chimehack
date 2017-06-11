@@ -13,6 +13,7 @@ class ImageInfoView: UIView {
     private let userLangLabel = UILabel()
     private let learnLangLabel = UILabel()
     private let sendButton = UIButton()
+    private let speakButton = UIButton()
     
     private let onSend : ()->()
     
@@ -34,12 +35,15 @@ class ImageInfoView: UIView {
     public func setData(data: [String : Any]) {
         
         var word = data["vocab"] as? String ?? ""
-        if word == "no person" {
-            word = "no hotdog"
-        }
+        var t_word = data["t_vocab"] as? String ?? ""
+        let t_sentence = data["t_sentence"] as? String ?? ""
+        let sentence = data["sentence"] as? String ?? ""
+        let gif = data["giphy_url"] as? String ?? ""
+
         
-//        let sentence = data["sentence"] as? String ?? ""
-//        let gif = data["giphy_url"] as? String ?? ""
+        if word == "no person" {
+            word = "not hotdog"
+        }
         
         let font = UIFont.systemFont(ofSize: 30)
         
@@ -54,7 +58,7 @@ class ImageInfoView: UIView {
         }
         
         addSubview(learnLangLabel)
-        learnLangLabel.text = "tafaha"
+        learnLangLabel.text = t_word
         learnLangLabel.font = font
         learnLangLabel.sizeToFit()
         learnLangLabel.snp.makeConstraints { (make) in
@@ -70,6 +74,15 @@ class ImageInfoView: UIView {
             make.width.height.equalTo(30)
             make.right.equalTo(self).inset(20)
             make.top.equalTo(self).offset(30)
+        }
+        
+        addSubview(speakButton)
+        speakButton.setImage(#imageLiteral(resourceName: "speaker"), for: .normal)
+        speakButton.addTarget(self, action: #selector(speakTapped), for: .touchUpInside)
+        speakButton.snp.makeConstraints { (make) in
+            make.width.height.equalTo(30)
+            make.centerY.equalTo(sendButton)
+            make.right.equalTo(sendButton.snp.left).offset(-10)
         }
         
         let borderView = UIView()
@@ -88,6 +101,23 @@ class ImageInfoView: UIView {
             make.height.equalTo(1)
             make.top.equalTo(learnLangLabel.snp.bottom).offset(20)
         }
+        
+        let sentLabel = UILabel()
+        addSubview(sentLabel)
+        sentLabel.text = sentence
+        sentLabel.numberOfLines = 0
+//        sentLabel.sizeToFit()
+        sentLabel.snp.makeConstraints { (make) in
+            make.height.equalTo(100)
+            make.left.right.equalTo(self).inset(30)
+            make.top.equalTo(dividerView).offset(20)
+        }
+        
+        
+        let t_sentLabel = UILabel()
+        t_sentLabel.text = t_sentence
+        
+        
 
     }
     
@@ -97,6 +127,10 @@ class ImageInfoView: UIView {
     
     func sendPressed() {
         onSend()
+    }
+    
+    func speakTapped() {
+        
     }
     
 }

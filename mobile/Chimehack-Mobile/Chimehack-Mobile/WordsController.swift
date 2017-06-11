@@ -15,6 +15,8 @@ class WordsController: UIViewController {
     private let wordsLabel = UILabel()
     private let backButton = UIButton()
     
+    private var challenges : [Challenge] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,31 +46,37 @@ class WordsController: UIViewController {
         challengeLabel.snp.makeConstraints { (make) in
             make.size.equalTo(challengeLabel)
             make.left.equalTo(view).offset(20)
-            make.top.equalTo(titleView.snp.bottom).offset(20)
+            make.top.equalTo(titleView.snp.bottom).offset(5)
         }
         
         let challengeScrollView = UIScrollView()
         view.addSubview(challengeScrollView)
-        challengeScrollView.backgroundColor = UIColor.green
+//        challengeScrollView.backgroundColor = UIColor.green
         challengeScrollView.snp.makeConstraints { (make) in
             make.left.right.equalTo(view)
-            make.top.equalTo(challengeLabel.snp.bottom).offset(20)
-            make.height.equalTo(100)
+            make.top.equalTo(challengeLabel.snp.bottom).offset(5)
+            make.height.equalTo(200)
         }
         
         /* Load challenges */
         BackendModel.sharedInstance.getChallenges { (results) in
             
             DispatchQueue.main.async {
-                let views = results.map({ (user, imgData) -> UIView in
+//                let results = results.filter({ !$0.completed })
+                let views = results.map({ (challenge) -> UIView in
                     
-                    let v = UIView()
+                    let v = BlockTapView(block: { 
+                        self.showChallenge(challenge: challenge)
+                    })
                     v.backgroundColor = UIColor.white
                     let label = UILabel()
                     v.addSubview(label)
-                    label.text = "Challenge from \(user)"
+                    print(challenge.fromUser)
+                    label.text = "Challenge from \(challenge.fromUser)"
+                    label.sizeToFit()
                     label.snp.makeConstraints({ (make) in
                         make.left.equalTo(v).offset(20)
+                        make.size.equalTo(label)
                         make.centerY.equalTo(v)
                     })
                     
@@ -78,6 +86,10 @@ class WordsController: UIViewController {
                 let listView = ListView(subviewList: views, componentHeight: 60)
                 
                 challengeScrollView.addSubview(listView)
+                listView.snp.makeConstraints({ (make) in
+                    make.left.right.equalTo(self.view)
+                    make.top.bottom.equalTo(challengeScrollView)
+                })
                 challengeScrollView.contentSize = CGSize(width: self.view.frame.width, height: CGFloat(60 * views.count))
             }
             
@@ -89,9 +101,10 @@ class WordsController: UIViewController {
         wordsLabel.sizeToFit()
         view.addSubview(wordsLabel)
         wordsLabel.snp.makeConstraints { (make) in
-            make.left.right.equalTo(view)
-            make.size.equalTo(view)
-            make.top.equalTo(challengeScrollView.snp.bottom).offset(10)
+            make.left.equalTo(view).offset(20)
+            make.right.equalTo(view)
+            make.size.equalTo(wordsLabel)
+            make.top.equalTo(challengeScrollView.snp.bottom).offset(5)
         }
         
         let wordViewList = DatabaseModel.sharedInstance.viewedWords().map { (viewedWord) -> UIView in
@@ -99,6 +112,7 @@ class WordsController: UIViewController {
             let label = UILabel()
             v.addSubview(label)
             label.text = viewedWord.word
+            print(viewedWord.word)
             label.sizeToFit()
             label.snp.makeConstraints({ (make) in
                 make.left.equalTo(v).offset(20)
@@ -109,12 +123,12 @@ class WordsController: UIViewController {
             return v
         }
         
-//        let wordsView = ListView(subviewList: wordViewList, componentHeight: 60)
-//        view.addSubview(wordsView)
-//        wordsView.snp.makeConstraints { (make) in
-//            make.left.right.bottom.equalTo(view)
-//            make.top.equalTo(wordsLabel.snp.bottom).offset(10)
-//        }
+        let wordsView = ListView(subviewList: wordViewList, componentHeight: 60)
+        view.addSubview(wordsView)
+        wordsView.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalTo(view)
+            make.top.equalTo(wordsLabel.snp.bottom).offset(10)
+        }
     }
     
     func backPressed() {
@@ -122,6 +136,12 @@ class WordsController: UIViewController {
         UIView.animate(withDuration: 0.25) {
             self.view.frame.origin = CGPoint(x: self.view.frame.width, y: 0)
         }
+    }
+    
+    func showChallenge(challenge: Challenge) {
+        
+        let vc = ChallengeControler(challenge: challenge)
+        present(vc, animated: true, completion: nil)
     }
     
 }
