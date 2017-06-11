@@ -11,7 +11,6 @@ import os
 
 image_recognizer = ImageRecognizer()
 
-
 class IOSEndpoint(Resource):
     def post(self):
         """
