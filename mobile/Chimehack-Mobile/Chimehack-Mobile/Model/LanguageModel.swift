@@ -14,10 +14,10 @@ class LanguageModel {
     
     /* Instance fields */
     private let _languageList = [
-        "English",
-        "Arabic",
-        "Persian",
-        "Lebanese"
+        "english",
+        "arabic",
+        "persian",
+        "lebanese"
     ]
     
     private var _userLanguage : String? = nil

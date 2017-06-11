@@ -87,7 +87,7 @@ class UserController: UIViewController {
         friendsView.backgroundColor = UIColor.yellow
         friendsView.snp.makeConstraints { (make) in
             make.right.equalTo(view)
-            make.top.equalTo(challengesView.snp.bottom)
+            make.top.equalTo(logoView.snp.bottom)
             make.width.equalTo(view.frame.width / 2.0)
         }
         view.addSubview(friendsButton)
@@ -104,8 +104,8 @@ class UserController: UIViewController {
         logoView.backgroundColor = UIColor.yellow
         logoView.snp.makeConstraints { (make) in
             make.right.equalTo(view)
-            make.top.equalTo(titleView.snp.bottom)
-            make.width.height.equalTo(view.frame.width / 2.0)
+            make.bottom.equalTo(friendsView.snp.top)
+            make.width.equalTo(view.frame.width / 2.0)
         }
     }
     

@@ -82,6 +82,7 @@ class SetupController: UIViewController {
             _isSelectingUserLanguage = false
         } else {
             
+            LanguageModel.sharedInstance.setLearningLanguage(language: language)
             /* Move on */
             navigationController?.dismiss(animated: true, completion: nil)
         }

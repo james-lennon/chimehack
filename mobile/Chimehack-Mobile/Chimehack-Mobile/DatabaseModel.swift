@@ -41,6 +41,7 @@ class DatabaseModel {
             }
         }
         
+//        try! rlm.commitWrite()
         
     }
     

@@ -46,7 +46,7 @@ class ListView: UIView {
         }
         
         snp.makeConstraints { (make) in
-            make.bottom.equalTo(lastView!.snp.bottom)
+            make.bottom.equalTo((lastView ?? self).snp.bottom)
         }
     }
     

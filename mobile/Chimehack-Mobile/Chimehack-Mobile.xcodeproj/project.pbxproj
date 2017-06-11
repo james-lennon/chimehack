@@ -24,6 +24,9 @@
 		9D7C5DF31EED015B00F306A5 /* BackendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DF21EED015B00F306A5 /* BackendModel.swift */; };
 		9DD76EA41EED1C03005EABCF /* SendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD76EA31EED1C03005EABCF /* SendController.swift */; };
 		9DD76EA61EED2B99005EABCF /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD76EA51EED2B99005EABCF /* DatabaseModel.swift */; };
+		9DD76EA81EEDA8DE005EABCF /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD76EA71EEDA8DD005EABCF /* Challenge.swift */; };
+		9DD76EAA1EEDADF1005EABCF /* ChallengeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD76EA91EEDADF1005EABCF /* ChallengeController.swift */; };
+		9DD76EAC1EEDAFC7005EABCF /* BlockTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD76EAB1EEDAFC7005EABCF /* BlockTapView.swift */; };
 		9DFAAD791EED037E00BDBE28 /* ImageInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFAAD781EED037E00BDBE28 /* ImageInfoController.swift */; };
 		9DFAAD7B1EED03BA00BDBE28 /* ImageInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFAAD7A1EED03BA00BDBE28 /* ImageInfoView.swift */; };
 		9DFAAD7D1EED11F400BDBE28 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFAAD7C1EED11F400BDBE28 /* Friend.swift */; };
@@ -53,6 +56,9 @@
 		9D7C5DF21EED015B00F306A5 /* BackendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackendModel.swift; path = Model/BackendModel.swift; sourceTree = "<group>"; };
 		9DD76EA31EED1C03005EABCF /* SendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendController.swift; path = Controller/SendController.swift; sourceTree = "<group>"; };
 		9DD76EA51EED2B99005EABCF /* DatabaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
+		9DD76EA71EEDA8DD005EABCF /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenge.swift; path = Model/Challenge.swift; sourceTree = "<group>"; };
+		9DD76EA91EEDADF1005EABCF /* ChallengeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChallengeController.swift; path = Controller/ChallengeController.swift; sourceTree = "<group>"; };
+		9DD76EAB1EEDAFC7005EABCF /* BlockTapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlockTapView.swift; path = View/BlockTapView.swift; sourceTree = "<group>"; };
 		9DFAAD781EED037E00BDBE28 /* ImageInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageInfoController.swift; path = Controller/ImageInfoController.swift; sourceTree = "<group>"; };
 		9DFAAD7A1EED03BA00BDBE28 /* ImageInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageInfoView.swift; path = View/ImageInfoView.swift; sourceTree = "<group>"; };
 		9DFAAD7C1EED11F400BDBE28 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Friend.swift; path = Model/Friend.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 				9DFAAD7A1EED03BA00BDBE28 /* ImageInfoView.swift */,
 				9DFAAD7E1EED140D00BDBE28 /* ListView.swift */,
 				9D206DB01EED1A4B002918BB /* FriendView.swift */,
+				9DD76EAB1EEDAFC7005EABCF /* BlockTapView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -135,6 +142,7 @@
 				9D7C5DF21EED015B00F306A5 /* BackendModel.swift */,
 				9DFAAD7C1EED11F400BDBE28 /* Friend.swift */,
 				9DD76EA51EED2B99005EABCF /* DatabaseModel.swift */,
+				9DD76EA71EEDA8DD005EABCF /* Challenge.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -148,6 +156,7 @@
 				9D7C5DF01EECF23500F306A5 /* WordsController.swift */,
 				9DFAAD781EED037E00BDBE28 /* ImageInfoController.swift */,
 				9DD76EA31EED1C03005EABCF /* SendController.swift */,
+				9DD76EA91EEDADF1005EABCF /* ChallengeController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -290,8 +299,10 @@
 				9D7C5DED1EECEE3600F306A5 /* CameraButton.swift in Sources */,
 				9D7C5DEF1EECF22900F306A5 /* UserController.swift in Sources */,
 				9D7C5DE41EECC62300F306A5 /* LanguageModel.swift in Sources */,
+				9DD76EAA1EEDADF1005EABCF /* ChallengeController.swift in Sources */,
 				9DFAAD7B1EED03BA00BDBE28 /* ImageInfoView.swift in Sources */,
 				9DFAAD791EED037E00BDBE28 /* ImageInfoController.swift in Sources */,
+				9DD76EA81EEDA8DE005EABCF /* Challenge.swift in Sources */,
 				9D7C5DE61EECD88100F306A5 /* ViewedWord.swift in Sources */,
 				9DD76EA41EED1C03005EABCF /* SendController.swift in Sources */,
 				9D7C5DE81EECE01C00F306A5 /* LanguageButton.swift in Sources */,
@@ -301,6 +312,7 @@
 				9D206DB11EED1A4B002918BB /* FriendView.swift in Sources */,
 				9D7C5DF31EED015B00F306A5 /* BackendModel.swift in Sources */,
 				9D7C5DDE1EECC16A00F306A5 /* MainCameraController.swift in Sources */,
+				9DD76EAC1EEDAFC7005EABCF /* BlockTapView.swift in Sources */,
 				9DFAAD7D1EED11F400BDBE28 /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
