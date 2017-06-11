@@ -15,7 +15,8 @@ class BackendModel {
     
     
     private let UPLOAD_URL = "https://39a34bb3.ngrok.io/api/ios/image_recognition"
-    private let CHALLENGE_URL = "https://39a34bb3.ngrok.io/api/get/challenge"
+    private let CHALLENGE_URL = "https://39a34bb3.ngrok.io/challenge"
+    private let SEND_URL = "https://39a34bb3.ngrok.io/challenge"
     
     private var _friends : [Friend]? = nil
     
@@ -44,7 +45,7 @@ class BackendModel {
         let imageData:Data = UIImagePNGRepresentation(resizeImage(image: image, newWidth: 100))!
         let strBase64:String = imageData.base64EncodedString()
         
-        print(strBase64)
+//        print(strBase64)
         
         let data = ["media_url" : strBase64, "target_language": LanguageModel.sharedInstance.userLanguage()]
         
@@ -68,35 +69,59 @@ class BackendModel {
     }
     
     public func username() -> String {
-        return "James"
+        return "james"
     }
     
     public func getFriends(callback: ([Friend]?)->()) {
         
         callback([
-            Friend(name: "Eli", score: 3),
-            Friend(name: "Jenny", score: 5),
-            Friend(name: "Madhav", score: 4),
-            Friend(name: "Dan", score: 6)
+            Friend(name: "james", score: 17),
+            Friend(name: "eli", score: 3),
+            Friend(name: "jenny", score: 5),
+            Friend(name: "dan", score: 6)
             ])
     }
     
-    public func sendChallenge(image: UIImage, word: String, friends: [String], callback: ()->()) {
+    public func sendChallenge(image: UIImage, word: String, friends: [String], callback: @escaping ()->()) {
         
-        callback()
+        var toStr = ""
+        for (index, f) in friends.enumerated() {
+            
+            if index > 0 {
+                toStr += ","
+            }
+            toStr += f
+        }
+        
+        let imageData:Data = UIImagePNGRepresentation(resizeImage(image: image, newWidth: 100))!
+        let strBase64:String = imageData.base64EncodedString()
+        
+        let data = ["fromUser" : username(), "toUsers": toStr, "userLabel": word, "base64Image": strBase64] as [String : Any]
+        
+        Alamofire.request(SEND_URL, method: .post, parameters: data).responseJSON { responseJSON in
+            
+            if let json = responseJSON.result.value as? [[String : Any]] {
+                print("JSON: \(json)")
+                
+                callback()
+            } else {
+                callback()
+            }
+        }
     }
     
-    public func getChallenges(callback: @escaping ([(String, String)])->()) {
+    public func getChallenges(callback: @escaping ([Challenge])->()) {
         
         let data = ["username" : username()]
         
         Alamofire.request(CHALLENGE_URL, method: .get, parameters: data).responseJSON { responseJSON in
             
-            if let json = responseJSON.result.value as? [String : Any] {
+            if let json = responseJSON.result.value as? [[String : Any]] {
                 print("JSON: \(json)")
                 
-                callback([])
-//                callback(json)
+                let lst = json.map({ Challenge(data: $0) })
+                
+                callback(lst)
             } else {
                 callback([])
             }

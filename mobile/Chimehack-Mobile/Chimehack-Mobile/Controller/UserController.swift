@@ -62,9 +62,8 @@ class UserController: UIViewController {
         pointsButton.backgroundColor = UIColor.cyan
         pointsButton.snp.makeConstraints { (make) in
             make.width.height.equalTo(60)
-            make.top.equalTo(self.view).offset(view.frame.width / 4.0)
-            make.left.equalTo(self.view).inset(view.frame.width / 4.0)
         }
+        pointsButton.center = pointsView.center
         
         let challengesView = UIView()
         view.addSubview(challengesView)
@@ -80,17 +79,16 @@ class UserController: UIViewController {
         challengesButton.backgroundColor = UIColor.orange
         challengesButton.snp.makeConstraints { (make) in
             make.width.height.equalTo(60)
-            make.bottom.equalTo(self.view).inset(view.frame.width / 4.0)
-            make.left.equalTo(self.view).inset(view.frame.width / 4.0)
         }
+        challengesButton.center = challengesView.center
         
         let friendsView = UIView()
         view.addSubview(friendsView)
         friendsView.backgroundColor = UIColor.yellow
         friendsView.snp.makeConstraints { (make) in
             make.right.equalTo(view)
-            make.width.height.equalTo(view.frame.width / 2.0)
-            make.bottom.equalTo(titleView.snp.bottom)
+            make.top.equalTo(challengesView.snp.bottom)
+            make.width.equalTo(view.frame.width / 2.0)
         }
         view.addSubview(friendsButton)
         friendsButton.setImage(#imageLiteral(resourceName: "dancinggirl"), for: .normal)
@@ -98,17 +96,16 @@ class UserController: UIViewController {
         friendsButton.backgroundColor = UIColor.yellow
         friendsButton.snp.makeConstraints { (make) in
             make.width.height.equalTo(60)
-            make.bottom.equalTo(self.view).inset(view.frame.width / 4.0)
-            make.right.equalTo(self.view).inset(view.frame.width / 4.0)
         }
+        friendsButton.center = friendsView.center
         
-        let logoView = UIImageView(image: #imageLiteral(resourceName: "treasurechest"))
+        let logoView = UIImageView(image: #imageLiteral(resourceName: "icon-blank"))
         view.addSubview(logoView)
         logoView.backgroundColor = UIColor.yellow
         logoView.snp.makeConstraints { (make) in
-            make.left.equalTo(view)
+            make.right.equalTo(view)
+            make.top.equalTo(titleView.snp.bottom)
             make.width.height.equalTo(view.frame.width / 2.0)
-            make.top.equalTo(view.frame.height / 4.0)
         }
     }
     

@@ -34,12 +34,15 @@ class ImageInfoView: UIView {
     public func setData(data: [String : Any]) {
         
         var word = data["vocab"] as? String ?? ""
-        if word == "no person" {
-            word = "no hotdog"
-        }
+        var t_word = data["t_vocab"] as? String ?? ""
+        let t_sentence = data["t_sentence"] as? String ?? ""
+        let sentence = data["sentence"] as? String ?? ""
+        let gif = data["giphy_url"] as? String ?? ""
+
         
-//        let sentence = data["sentence"] as? String ?? ""
-//        let gif = data["giphy_url"] as? String ?? ""
+        if word == "no person" {
+            word = "not hotdog"
+        }
         
         let font = UIFont.systemFont(ofSize: 30)
         
@@ -54,7 +57,7 @@ class ImageInfoView: UIView {
         }
         
         addSubview(learnLangLabel)
-        learnLangLabel.text = "tafaha"
+        learnLangLabel.text = t_word
         learnLangLabel.font = font
         learnLangLabel.sizeToFit()
         learnLangLabel.snp.makeConstraints { (make) in
@@ -88,6 +91,23 @@ class ImageInfoView: UIView {
             make.height.equalTo(1)
             make.top.equalTo(learnLangLabel.snp.bottom).offset(20)
         }
+        
+        let sentLabel = UILabel()
+        addSubview(sentLabel)
+        sentLabel.text = sentence
+        sentLabel.numberOfLines = 0
+//        sentLabel.sizeToFit()
+        sentLabel.snp.makeConstraints { (make) in
+            make.height.equalTo(100)
+            make.left.right.equalTo(self).inset(30)
+            make.top.equalTo(dividerView).offset(20)
+        }
+        
+        
+        let t_sentLabel = UILabel()
+        t_sentLabel.text = t_sentence
+        
+        
 
     }
     
