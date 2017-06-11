@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "879CC522CBAF4B0157F27ACFF8AAA164"
+               BlueprintIdentifier = "DE5D9D014EA637976FA2F367C15D1D53"
                BuildableName = "Pods_Chimehack_Mobile.framework"
                BlueprintName = "Pods-Chimehack-Mobile"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "879CC522CBAF4B0157F27ACFF8AAA164"
+            BlueprintIdentifier = "DE5D9D014EA637976FA2F367C15D1D53"
             BuildableName = "Pods_Chimehack_Mobile.framework"
             BlueprintName = "Pods-Chimehack-Mobile"
             ReferencedContainer = "container:Pods.xcodeproj">

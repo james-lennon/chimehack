@@ -31,6 +31,10 @@ class MainCameraController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /* Load models */
+        LanguageModel.sharedInstance.load()
+        BackendModel.sharedInstance.load()
     
         view.backgroundColor = UIColor.white
         

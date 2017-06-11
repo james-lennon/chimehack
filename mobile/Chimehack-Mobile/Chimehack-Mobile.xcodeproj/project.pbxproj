@@ -14,7 +14,6 @@
 		9D7C5DD31EECC08E00F306A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D7C5DD11EECC08E00F306A5 /* LaunchScreen.storyboard */; };
 		9D7C5DDE1EECC16A00F306A5 /* MainCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DDD1EECC16A00F306A5 /* MainCameraController.swift */; };
 		9D7C5DE01EECC17700F306A5 /* SetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DDF1EECC17700F306A5 /* SetupController.swift */; };
-		9D7C5DE21EECC18F00F306A5 /* ImageLookupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DE11EECC18F00F306A5 /* ImageLookupModel.swift */; };
 		9D7C5DE41EECC62300F306A5 /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DE31EECC62300F306A5 /* LanguageModel.swift */; };
 		9D7C5DE61EECD88100F306A5 /* ViewedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DE51EECD88100F306A5 /* ViewedWord.swift */; };
 		9D7C5DE81EECE01C00F306A5 /* LanguageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DE71EECE01C00F306A5 /* LanguageButton.swift */; };
@@ -24,6 +23,8 @@
 		9D7C5DF31EED015B00F306A5 /* BackendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DF21EED015B00F306A5 /* BackendModel.swift */; };
 		9DFAAD791EED037E00BDBE28 /* ImageInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFAAD781EED037E00BDBE28 /* ImageInfoController.swift */; };
 		9DFAAD7B1EED03BA00BDBE28 /* ImageInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFAAD7A1EED03BA00BDBE28 /* ImageInfoView.swift */; };
+		9DFAAD7D1EED11F400BDBE28 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFAAD7C1EED11F400BDBE28 /* Friend.swift */; };
+		9DFAAD7F1EED140D00BDBE28 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFAAD7E1EED140D00BDBE28 /* ListView.swift */; };
 		E4181F5180A4B5C02431EC90 /* Pods_Chimehack_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF05866A26FFDAFEEE2DE08D /* Pods_Chimehack_Mobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +40,6 @@
 		9D7C5DD41EECC08E00F306A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D7C5DDD1EECC16A00F306A5 /* MainCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainCameraController.swift; path = Controller/MainCameraController.swift; sourceTree = "<group>"; };
 		9D7C5DDF1EECC17700F306A5 /* SetupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetupController.swift; path = Controller/SetupController.swift; sourceTree = "<group>"; };
-		9D7C5DE11EECC18F00F306A5 /* ImageLookupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLookupModel.swift; path = MOdel/ImageLookupModel.swift; sourceTree = "<group>"; };
 		9D7C5DE31EECC62300F306A5 /* LanguageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguageModel.swift; path = Model/LanguageModel.swift; sourceTree = "<group>"; };
 		9D7C5DE51EECD88100F306A5 /* ViewedWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewedWord.swift; path = Model/ViewedWord.swift; sourceTree = "<group>"; };
 		9D7C5DE71EECE01C00F306A5 /* LanguageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguageButton.swift; path = View/LanguageButton.swift; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		9D7C5DF21EED015B00F306A5 /* BackendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackendModel.swift; path = Model/BackendModel.swift; sourceTree = "<group>"; };
 		9DFAAD781EED037E00BDBE28 /* ImageInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageInfoController.swift; path = Controller/ImageInfoController.swift; sourceTree = "<group>"; };
 		9DFAAD7A1EED03BA00BDBE28 /* ImageInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageInfoView.swift; path = View/ImageInfoView.swift; sourceTree = "<group>"; };
+		9DFAAD7C1EED11F400BDBE28 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Friend.swift; path = Model/Friend.swift; sourceTree = "<group>"; };
+		9DFAAD7E1EED140D00BDBE28 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListView.swift; path = View/ListView.swift; sourceTree = "<group>"; };
 		BF05866A26FFDAFEEE2DE08D /* Pods_Chimehack_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chimehack_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 				9D7C5DE71EECE01C00F306A5 /* LanguageButton.swift */,
 				9D7C5DEC1EECEE3600F306A5 /* CameraButton.swift */,
 				9DFAAD7A1EED03BA00BDBE28 /* ImageInfoView.swift */,
+				9DFAAD7E1EED140D00BDBE28 /* ListView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -120,10 +123,10 @@
 		9D7C5DDB1EECC14500F306A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9D7C5DE11EECC18F00F306A5 /* ImageLookupModel.swift */,
 				9D7C5DE31EECC62300F306A5 /* LanguageModel.swift */,
 				9D7C5DE51EECD88100F306A5 /* ViewedWord.swift */,
 				9D7C5DF21EED015B00F306A5 /* BackendModel.swift */,
+				9DFAAD7C1EED11F400BDBE28 /* Friend.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DFAAD7F1EED140D00BDBE28 /* ListView.swift in Sources */,
 				9D7C5DCE1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodeld in Sources */,
 				9D7C5DC81EECC08E00F306A5 /* ViewController.swift in Sources */,
 				9D7C5DED1EECEE3600F306A5 /* CameraButton.swift in Sources */,
@@ -285,7 +289,7 @@
 				9D7C5DE01EECC17700F306A5 /* SetupController.swift in Sources */,
 				9D7C5DF31EED015B00F306A5 /* BackendModel.swift in Sources */,
 				9D7C5DDE1EECC16A00F306A5 /* MainCameraController.swift in Sources */,
-				9D7C5DE21EECC18F00F306A5 /* ImageLookupModel.swift in Sources */,
+				9DFAAD7D1EED11F400BDBE28 /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
