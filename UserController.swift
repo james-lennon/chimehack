@@ -1,32 +1,70 @@
+//
+//  UserController.swift
+//  Chimehack-Mobile
+//
+//  Created by James Lennon on 6/10/17.
+//  Copyright © 2017 James Lennon. All rights reserved.
+//
+
 import UIKit
 import SnapKit
 
 class UserController: UIViewController {
     
     private let backButton = UIButton()
+    private let challengesButton = UIButton()
+    private let pointsButton = UIButton()
+    private let friendsButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
         
-        view.addSubview(backButton)
-        backButton.setImage(#imageLiteral(resourceName: "cameralogo"), for: .normal)
+        let titleView = UIView()
+        view.addSubview(titleView)
+        titleView.backgroundColor = UIColor.magenta
+        titleView.snp.makeConstraints { (make) in
+            make.left.right.top.equalTo(view)
+            make.height.equalTo(20 + 55)
+        }
+        
+        titleView.addSubview(backButton)
+        backButton.setImage(#imageLiteral(resourceName: "back"), for: .normal)
         backButton.addTarget(self, action: #selector(backPressed), for: .touchUpInside)
-        backButton.backgroundColor = UIColor.magenta
+        backButton.transform = CGAffineTransform(rotationAngle: (180.0 * CGFloat(Double.pi)) / 180.0)
         backButton.snp.makeConstraints { (make) in
             make.width.height.equalTo(30)
             make.top.equalTo(self.view).offset(30)
             make.right.equalTo(self.view).inset(20)
         }
         
+        let pointsView = UIView()
+        view.addSubview(pointsView)
+        pointsView.backgroundColor = UIColor.cyan
+        pointsView.snp.makeConstraints { (make) in
+            make.left.equalTo(view)
+            make.width.height.equalTo(view.frame.width / 2.0)
+            make.top.equalTo(titleView.snp.bottom)
+        }
+        let userLabel = UILabel()
+        pointsView.addSubview(userLabel)
+        userLabel.text = BackendModel.sharedInstance.username()
+        userLabel.sizeToFit()
+        userLabel.snp.makeConstraints { (make) in
+            make.size.equalTo(userLabel)
+            make.centerX.equalTo(pointsView)
+            make.top.equalTo(pointsView).offset(20)
+        }
+        
+        
         view.addSubview(challengesButton)
         challengesButton.setImage(#imageLiteral(resourceName: "armmuscle"), for: .normal)
         challengesButton.addTarget(self, action: #selector(challengesPressed), for: .touchUpInside)
-        chalengesButton.backgroundColor = UIColor.orange
+        challengesButton.backgroundColor = UIColor.orange
         challengesButton.snp.makeConstraints { (make) in
             make.width.height.equalTo(30)
-            make.bottom.equalTo(self.view).offset(30)
+            make.bottom.equalTo(self.view).inset(30)
             make.left.equalTo(self.view).inset(20)
         }
         
@@ -46,34 +84,32 @@ class UserController: UIViewController {
         friendsButton.backgroundColor = UIColor.yellow
         friendsButton.snp.makeConstraints { (make) in
             make.width.height.equalTo(30)
-            make.bottom.equalTo(self.view).offset(30)
+            make.bottom.equalTo(self.view).inset(30)
             make.right.equalTo(self.view).inset(20)
         }
-
-
     }
     
     func backPressed() {
         UIView.animate(withDuration: 0.25) {
-            self.MainCameraController.view.frame.origin = CGPoint.zero
+            self.view.frame.origin = CGPoint(x: -self.view.frame.width, y: 0)
         }
     }
     
     func challengesPressed() {
-        UIView.animate(withDuration: 0.25) {
-            self.ChallengesController.view.frame.origin = CGPoint.zero
-        }
+        //        UIView.animate(withDuration: 0.25) {
+        //            self.ChallengesController.view.frame.origin = CGPoint.zero
+        //        }
     }
     
     func pointsPressed() {
-        UIView.animate(withDuration: 0.25) {
-            self.WordsController.view.frame.origin = CGPoint.zero
-        }
+        //        UIView.animate(withDuration: 0.25) {
+        //            self.WordsController.view.frame.origin = CGPoint.zero
+        //        }
     }
     
     func friendsPressed() {
-        UIView.animate(withDuration: 0.25) {
-            self.FriendsController.view.frame.origin = CGPoint.zero
-        }
+        //        UIView.animate(withDuration: 0.25) {
+        //            self.FriendsController.view.frame.origin = CGPoint.zero
+        //        }
     }
 }

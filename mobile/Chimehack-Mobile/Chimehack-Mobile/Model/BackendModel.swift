@@ -66,6 +66,10 @@ class BackendModel {
         callback(17)
     }
     
+    public func username() -> String {
+        return "James"
+    }
+    
     public func getFriends(callback: ([Friend]?)->()) {
         
         callback([
