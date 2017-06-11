@@ -1,0 +1,32 @@
+[bumpr]
+file = flask_restplus/__about__.py
+vcs = git
+commit = true
+tag = true
+push = true
+tests = tox
+publish =
+    inv assets
+    python setup.py sdist bdist_wheel register upload
+clean =
+    inv clean
+files =
+    README.rst
+
+[bump]
+unsuffix = true
+
+[prepare]
+suffix = dev
+
+[changelog]
+file = CHANGELOG.rst
+bump = {version} ({date:%Y-%m-%d})
+prepare = Current
+
+[readthedoc]
+id = flask-restplus
+
+[replace]
+dev = ?branch=master
+stable = ?tag={version}
