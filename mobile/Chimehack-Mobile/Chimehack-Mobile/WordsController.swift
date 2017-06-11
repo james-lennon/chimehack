@@ -82,6 +82,8 @@ class WordsController: UIViewController {
             }
             
         }
+        
+//        let _ = DatabaseModel.sharedInstance.viewedWords()
     }
     
     func backPressed() {

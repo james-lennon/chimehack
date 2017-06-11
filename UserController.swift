@@ -63,10 +63,11 @@ class UserController: UIViewController {
         pointsButton.snp.makeConstraints { (make) in
             make.width.height.equalTo(60)
             make.top.equalTo(self.view).offset(view.frame.width / 4.0)
-            make.left.equalTo(self.view).inset(view.frame.length / 4.0)
+            make.left.equalTo(self.view).inset(view.frame.width / 4.0)
         }
         
         let challengesView = UIView()
+        view.addSubview(challengesView)
         challengesView.backgroundColor = UIColor.cyan
         challengesView.snp.makeConstraints { (make) in
             make.left.equalTo(view)
@@ -80,10 +81,11 @@ class UserController: UIViewController {
         challengesButton.snp.makeConstraints { (make) in
             make.width.height.equalTo(60)
             make.bottom.equalTo(self.view).inset(view.frame.width / 4.0)
-            make.left.equalTo(self.view).inset(view.frame.length / 4.0)
+            make.left.equalTo(self.view).inset(view.frame.width / 4.0)
         }
         
         let friendsView = UIView()
+        view.addSubview(friendsView)
         friendsView.backgroundColor = UIColor.cyan
         friendsView.snp.makeConstraints { (make) in
             make.left.equalTo(view)
@@ -97,15 +99,16 @@ class UserController: UIViewController {
         friendsButton.snp.makeConstraints { (make) in
             make.width.height.equalTo(60)
             make.bottom.equalTo(self.view).inset(view.frame.width / 4.0)
-            make.right.equalTo(self.view).inset(view.frame.length / 4.0)
+            make.right.equalTo(self.view).inset(view.frame.width / 4.0)
         }
         
-        let logoView = UIImageView(image: "logo")
+        let logoView = UIImageView(image: #imageLiteral(resourceName: "treasurechest"))
+        view.addSubview(logoView)
         logoView.backgroundColor = UIColor.yellow
         logoView.snp.makeConstraints { (make) in
             make.left.equalTo(view)
             make.width.height.equalTo(view.frame.width / 2.0)
-            make.top.equalTo.inset(view.frame.length / 4.0)
+            make.top.equalTo(view.frame.height / 4.0)
         }
     }
     
