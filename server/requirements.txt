@@ -13,3 +13,4 @@ wheel==0.24.0
 twilio==6.3.0
 bs4==0.0.1
 clarifai==2.0.24
+lxml==3.8.0

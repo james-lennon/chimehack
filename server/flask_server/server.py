@@ -1,11 +1,7 @@
 from flask import Flask, request
 from flask.ext.restful import Resource, Api, marshal_with, fields, abort
 from flask_restful_swagger import swagger
-from flask_server.api.twilio_rest import TwilioEndpoint
-from flask_server.api.ios_rest import IOSEndpoint
-from flask_server.api.ping import PingEndpoint
-from flask_server.api.user import UserEndpoint
-from flask_server.api.challenge import ChallengeEndpoint
+from flask_server.api import PingEndpoint, UserEndpoint, ChallengeEndpoint, TwilioEndpoint, IOSEndpoint
 
 API_VERSION_NUMBER = '1.0'
 API_VERSION_LABEL = 'v1'

@@ -14,16 +14,29 @@ class ImageInfoView: UIView {
     private let learnLangLabel = UILabel()
     private let sendButton = UIButton()
     
-    init() {
+    private let onSend : ()->()
+    
+    init(onSend: @escaping ()->()) {
+        
+        self.onSend = onSend
         
         super.init(frame: CGRect.zero)
         
         backgroundColor = UIColor.white
         
+        
+        /* Extra Content */
+        
+        
+        
+    }
+    
+    public func setData(word: String) {
+        
         let font = UIFont.systemFont(ofSize: 30)
         
         addSubview(userLangLabel)
-        userLangLabel.text = "Apple"
+        userLangLabel.text = word
         userLangLabel.font = font
         userLangLabel.sizeToFit()
         userLangLabel.snp.makeConstraints { (make) in
@@ -67,11 +80,7 @@ class ImageInfoView: UIView {
             make.height.equalTo(1)
             make.top.equalTo(learnLangLabel.snp.bottom).offset(20)
         }
-        
-        /* Extra Content */
-        
-        
-        
+
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -79,7 +88,7 @@ class ImageInfoView: UIView {
     }
     
     func sendPressed() {
-        
+        onSend()
     }
     
 }

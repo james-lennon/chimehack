@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D206DB11EED1A4B002918BB /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D206DB01EED1A4B002918BB /* FriendView.swift */; };
 		9D7C5DC61EECC08E00F306A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DC51EECC08E00F306A5 /* AppDelegate.swift */; };
 		9D7C5DC81EECC08E00F306A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DC71EECC08E00F306A5 /* ViewController.swift */; };
 		9D7C5DCE1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DCC1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodeld */; };
@@ -21,6 +22,8 @@
 		9D7C5DEF1EECF22900F306A5 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DEE1EECF22900F306A5 /* UserController.swift */; };
 		9D7C5DF11EECF23500F306A5 /* WordsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DF01EECF23500F306A5 /* WordsController.swift */; };
 		9D7C5DF31EED015B00F306A5 /* BackendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DF21EED015B00F306A5 /* BackendModel.swift */; };
+		9DD76EA41EED1C03005EABCF /* SendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD76EA31EED1C03005EABCF /* SendController.swift */; };
+		9DD76EA61EED2B99005EABCF /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD76EA51EED2B99005EABCF /* DatabaseModel.swift */; };
 		9DFAAD791EED037E00BDBE28 /* ImageInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFAAD781EED037E00BDBE28 /* ImageInfoController.swift */; };
 		9DFAAD7B1EED03BA00BDBE28 /* ImageInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFAAD7A1EED03BA00BDBE28 /* ImageInfoView.swift */; };
 		9DFAAD7D1EED11F400BDBE28 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFAAD7C1EED11F400BDBE28 /* Friend.swift */; };
@@ -31,6 +34,7 @@
 /* Begin PBXFileReference section */
 		2376E989F91C3FFCB984EDD0 /* Pods-Chimehack-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chimehack-Mobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chimehack-Mobile/Pods-Chimehack-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		7D53A0D57C1B3912AA9B97F0 /* Pods-Chimehack-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chimehack-Mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chimehack-Mobile/Pods-Chimehack-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
+		9D206DB01EED1A4B002918BB /* FriendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendView.swift; path = View/FriendView.swift; sourceTree = "<group>"; };
 		9D7C5DC21EECC08E00F306A5 /* Chimehack-Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chimehack-Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7C5DC51EECC08E00F306A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D7C5DC71EECC08E00F306A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		9D7C5DEE1EECF22900F306A5 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = Controller/UserController.swift; sourceTree = "<group>"; };
 		9D7C5DF01EECF23500F306A5 /* WordsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsController.swift; sourceTree = "<group>"; };
 		9D7C5DF21EED015B00F306A5 /* BackendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackendModel.swift; path = Model/BackendModel.swift; sourceTree = "<group>"; };
+		9DD76EA31EED1C03005EABCF /* SendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendController.swift; path = Controller/SendController.swift; sourceTree = "<group>"; };
+		9DD76EA51EED2B99005EABCF /* DatabaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
 		9DFAAD781EED037E00BDBE28 /* ImageInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageInfoController.swift; path = Controller/ImageInfoController.swift; sourceTree = "<group>"; };
 		9DFAAD7A1EED03BA00BDBE28 /* ImageInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageInfoView.swift; path = View/ImageInfoView.swift; sourceTree = "<group>"; };
 		9DFAAD7C1EED11F400BDBE28 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Friend.swift; path = Model/Friend.swift; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 				9D7C5DEC1EECEE3600F306A5 /* CameraButton.swift */,
 				9DFAAD7A1EED03BA00BDBE28 /* ImageInfoView.swift */,
 				9DFAAD7E1EED140D00BDBE28 /* ListView.swift */,
+				9D206DB01EED1A4B002918BB /* FriendView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -127,6 +134,7 @@
 				9D7C5DE51EECD88100F306A5 /* ViewedWord.swift */,
 				9D7C5DF21EED015B00F306A5 /* BackendModel.swift */,
 				9DFAAD7C1EED11F400BDBE28 /* Friend.swift */,
+				9DD76EA51EED2B99005EABCF /* DatabaseModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 				9D7C5DEE1EECF22900F306A5 /* UserController.swift */,
 				9D7C5DF01EECF23500F306A5 /* WordsController.swift */,
 				9DFAAD781EED037E00BDBE28 /* ImageInfoController.swift */,
+				9DD76EA31EED1C03005EABCF /* SendController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -275,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DFAAD7F1EED140D00BDBE28 /* ListView.swift in Sources */,
+				9DD76EA61EED2B99005EABCF /* DatabaseModel.swift in Sources */,
 				9D7C5DCE1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodeld in Sources */,
 				9D7C5DC81EECC08E00F306A5 /* ViewController.swift in Sources */,
 				9D7C5DED1EECEE3600F306A5 /* CameraButton.swift in Sources */,
@@ -283,10 +293,12 @@
 				9DFAAD7B1EED03BA00BDBE28 /* ImageInfoView.swift in Sources */,
 				9DFAAD791EED037E00BDBE28 /* ImageInfoController.swift in Sources */,
 				9D7C5DE61EECD88100F306A5 /* ViewedWord.swift in Sources */,
+				9DD76EA41EED1C03005EABCF /* SendController.swift in Sources */,
 				9D7C5DE81EECE01C00F306A5 /* LanguageButton.swift in Sources */,
 				9D7C5DF11EECF23500F306A5 /* WordsController.swift in Sources */,
 				9D7C5DC61EECC08E00F306A5 /* AppDelegate.swift in Sources */,
 				9D7C5DE01EECC17700F306A5 /* SetupController.swift in Sources */,
+				9D206DB11EED1A4B002918BB /* FriendView.swift in Sources */,
 				9D7C5DF31EED015B00F306A5 /* BackendModel.swift in Sources */,
 				9D7C5DDE1EECC16A00F306A5 /* MainCameraController.swift in Sources */,
 				9DFAAD7D1EED11F400BDBE28 /* Friend.swift in Sources */,
