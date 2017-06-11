@@ -19,4 +19,4 @@ class PingEndpoint(Resource):
         returns: Response (Object)
         """
         print "pinged!"
-        return Response('{"msg":"pinged!"}', mimetype='application/xml')
+        return Response('{"msg":"pinged!"}', mimetype='application/json')

@@ -4,6 +4,8 @@ from flask_restful_swagger import swagger
 from flask_server.api.twilio_rest import TwilioEndpoint
 from flask_server.api.ios_rest import IOSEndpoint
 from flask_server.api.ping import PingEndpoint
+from flask_server.api.user import UserEndpoint
+from flask_server.api.challenge import ChallengeEndpoint
 
 API_VERSION_NUMBER = '1.0'
 API_VERSION_LABEL = 'v1'
@@ -26,6 +28,8 @@ class CustomFlaskApp(object):
         self.api = swagger.docs(Api(self.app, errors=custom_errors), apiVersion=API_VERSION_NUMBER)
         
         self.api.add_resource(PingEndpoint, '/ping', endpoint='ping')
+        self.api.add_resource(UserEndpoint, '/user', endpoint='user')
+        self.api.add_resource(ChallengeEndpoint, '/challenge', endpoint='challenge')
         self.api.add_resource(TwilioEndpoint, '/api/twilio/image_recognition', endpoint='twilio_image_recognition')
         self.api.add_resource(IOSEndpoint, '/api/ios/image_recognition', endpoint='ios_image_recognition')
 

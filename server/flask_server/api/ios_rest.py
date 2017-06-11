@@ -7,7 +7,6 @@ from flask import Response
 from bs4 import BeautifulSoup
 from .image_recognition import ImageRecognizer
 
-
 class IOSEndpoint(Resource):
     def post(self):
         """
@@ -32,3 +31,4 @@ class IOSEndpoint(Resource):
         for message_part in message_parts:
             resp.append(message_part)
         return Response(str(resp), mimetype='application/xml')
+
