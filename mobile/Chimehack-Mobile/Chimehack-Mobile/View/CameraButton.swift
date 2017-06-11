@@ -11,7 +11,7 @@ import UIKit
 class CameraButton : UIView {
     
     private let SIZE : CGFloat = 80
-    private let cameraColor = UIColor.blue
+    private let cameraColor = UIColor.red
     
     public var onClick : (()->())? = nil
     

@@ -16,6 +16,8 @@ class ChallengeControler: UIViewController {
     private let typingBar = UITextField()
     private let sendButton = UIButton()
     
+    private var image : UIImage! = nil
+    
     init(challenge: Challenge) {
         
         self.challenge = challenge
@@ -34,7 +36,7 @@ class ChallengeControler: UIViewController {
         super.viewDidLoad()
         
         let dataDecoded : Data = Data(base64Encoded: challenge.imageData, options: .ignoreUnknownCharacters)!
-        let image = UIImage(data: dataDecoded)
+        image = UIImage(data: dataDecoded)
 
         let imageView = UIImageView(image: image)
         view.addSubview(imageView)
@@ -51,30 +53,48 @@ class ChallengeControler: UIViewController {
             make.height.equalTo(60)
         }
         
-        typingBar.addSubview(sendButton)
+        view.addSubview(sendButton)
         sendButton.setTitle("Send", for: .normal)
         sendButton.backgroundColor = UIColor.red
         sendButton.setTitleColor(UIColor.white, for: .normal)
         sendButton.addTarget(self, action: #selector(sendPressed), for: .touchUpInside)
-        sendButton.snp.makeConstraints { (make) in
-            make.top.bottom.equalTo(typingBar).inset(3)
-            make.right.equalTo(typingBar).inset(3)
-            make.width.equalTo(70)
-        }
+        let ht : CGFloat = 60 - 2 * 3
+        sendButton.frame = CGRect(x: view.frame.width - 70 - 3, y: view.frame.height - 3 - ht, width: 70, height: ht)
+//        sendButton.snp.makeConstraints { (make) in
+//            make.top.equalTo(typingBar).inset(3)
+//            make.bottom.equalTo(view).inset(3)
+//            make.right.equalTo(typingBar).inset(3)
+//            make.width.equalTo(70)
+//        }
     }
     
     func keyboardNotification(notification: Notification) {
         
         if let userInfo = notification.userInfo {
             
-            UIView.animate(withDuration: 0.25, animations: { 
-                let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            
+            UIView.animate(withDuration: 0.25, animations: {
                 if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
                     self.typingBar.frame.origin.y = 0.0 - 60
+                    self.sendButton.frame.origin.y = -60
                 } else {
                     self.typingBar.frame.origin.y = self.view.frame.height - (endFrame?.size.height ?? 0.0) - 60
+                    self.sendButton.frame.origin.y = self.view.frame.height - (endFrame?.size.height ?? 0.0) - 60 + 3
                 }
+            }, completion: { success in
+//                self.sendButton.snp.updateConstraints({ (make) in
+//                    make.bottom.equalTo(self.view).offset(-(endFrame?.size.height ?? 0.0) - 63)
+//                })
+//                self.sendButton.snp.remakeConstraints { (make) in
+//                    make.top.bottom.equalTo(self.typingBar).inset(3)
+//                    make.right.equalTo(self.typingBar).inset(3)
+//                    make.width.equalTo(70)
+//                }
             })
+            
+            
+            
             
         }
     }
@@ -83,7 +103,13 @@ class ChallengeControler: UIViewController {
         
         sendButton.isEnabled = false
         
-//        BackendModel.sharedInstance.sendChallenge(image: <#T##UIImage#>, word: <#T##String#>, friends: <#T##[String]#>, callback: <#T##() -> ()#>)
+        BackendModel.sharedInstance.confirmChallenge(challengeId: challenge.challengeID) {
+            
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+            }
+            
+        }
         
     }
     

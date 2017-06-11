@@ -47,7 +47,7 @@ class BackendModel {
         
 //        print(strBase64)
         
-        let data = ["media_url" : strBase64, "target_language": LanguageModel.sharedInstance.userLanguage()]
+        let data = ["media_url" : strBase64, "source_language" : LanguageModel.sharedInstance.userLanguage(), "target_language": LanguageModel.sharedInstance.learningLanguage()]
         
         Alamofire.request(UPLOAD_URL, method: .post, parameters: data).responseJSON { responseJSON in
             
@@ -127,5 +127,10 @@ class BackendModel {
             }
         }
         
+    }
+    
+    public func confirmChallenge(challengeId: String, callback: ()->()) {
+        
+        callback()
     }
 }

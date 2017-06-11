@@ -13,6 +13,7 @@ class ImageInfoView: UIView {
     private let userLangLabel = UILabel()
     private let learnLangLabel = UILabel()
     private let sendButton = UIButton()
+    private let speakButton = UIButton()
     
     private let onSend : ()->()
     
@@ -75,6 +76,15 @@ class ImageInfoView: UIView {
             make.top.equalTo(self).offset(30)
         }
         
+        addSubview(speakButton)
+        speakButton.setImage(#imageLiteral(resourceName: "speaker"), for: .normal)
+        speakButton.addTarget(self, action: #selector(speakTapped), for: .touchUpInside)
+        speakButton.snp.makeConstraints { (make) in
+            make.width.height.equalTo(30)
+            make.centerY.equalTo(sendButton)
+            make.right.equalTo(sendButton.snp.left).offset(-10)
+        }
+        
         let borderView = UIView()
         borderView.backgroundColor = UIColor.lightGray
         addSubview(borderView)
@@ -117,6 +127,10 @@ class ImageInfoView: UIView {
     
     func sendPressed() {
         onSend()
+    }
+    
+    func speakTapped() {
+        
     }
     
 }
