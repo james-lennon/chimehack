@@ -56,36 +56,56 @@ class UserController: UIViewController {
             make.centerX.equalTo(pointsView)
             make.top.equalTo(pointsView).offset(20)
         }
-        
-        
-        view.addSubview(challengesButton)
-        challengesButton.setImage(#imageLiteral(resourceName: "armmuscle"), for: .normal)
-        challengesButton.addTarget(self, action: #selector(challengesPressed), for: .touchUpInside)
-        challengesButton.backgroundColor = UIColor.orange
-        challengesButton.snp.makeConstraints { (make) in
-            make.width.height.equalTo(30)
-            make.bottom.equalTo(self.view).inset(30)
-            make.left.equalTo(self.view).inset(20)
-        }
-        
         view.addSubview(pointsButton)
         pointsButton.setImage(#imageLiteral(resourceName: "treasurechest"), for: .normal)
         pointsButton.addTarget(self, action: #selector(pointsPressed), for: .touchUpInside)
         pointsButton.backgroundColor = UIColor.cyan
         pointsButton.snp.makeConstraints { (make) in
-            make.width.height.equalTo(30)
-            make.top.equalTo(self.view).offset(30)
-            make.left.equalTo(self.view).inset(20)
+            make.width.height.equalTo(60)
+            make.top.equalTo(self.view).offset(view.frame.width / 4.0)
+            make.left.equalTo(self.view).inset(view.frame.length / 4.0)
         }
         
+        let challengesView = UIView()
+        challengesView.backgroundColor = UIColor.cyan
+        challengesView.snp.makeConstraints { (make) in
+            make.left.equalTo(view)
+            make.width.height.equalTo(view.frame.width / 2.0)
+            make.top.equalTo(titleView.snp.bottom)
+        }
+        view.addSubview(challengesButton)
+        challengesButton.setImage(#imageLiteral(resourceName: "armmuscle"), for: .normal)
+        challengesButton.addTarget(self, action: #selector(challengesPressed), for: .touchUpInside)
+        challengesButton.backgroundColor = UIColor.orange
+        challengesButton.snp.makeConstraints { (make) in
+            make.width.height.equalTo(60)
+            make.bottom.equalTo(self.view).inset(view.frame.width / 4.0)
+            make.left.equalTo(self.view).inset(view.frame.length / 4.0)
+        }
+        
+        let friendsView = UIView()
+        friendsView.backgroundColor = UIColor.cyan
+        friendsView.snp.makeConstraints { (make) in
+            make.left.equalTo(view)
+            make.width.height.equalTo(view.frame.width / 2.0)
+            make.top.equalTo(titleView.snp.bottom)
+        }
         view.addSubview(friendsButton)
         friendsButton.setImage(#imageLiteral(resourceName: "dancinggirl"), for: .normal)
         friendsButton.addTarget(self, action: #selector(friendsPressed), for: .touchUpInside)
         friendsButton.backgroundColor = UIColor.yellow
         friendsButton.snp.makeConstraints { (make) in
-            make.width.height.equalTo(30)
-            make.bottom.equalTo(self.view).inset(30)
-            make.right.equalTo(self.view).inset(20)
+            make.width.height.equalTo(60)
+            make.bottom.equalTo(self.view).inset(view.frame.width / 4.0)
+            make.right.equalTo(self.view).inset(view.frame.length / 4.0)
+        }
+        
+        let logoView = UIImageView(image: "logo")
+        logoView.backgroundColor = UIColor.yellow
+        logoView.snp.makeConstraints { (make) in
+            make.left.equalTo(view)
+            make.width.height.equalTo(view.frame.width / 2.0)
+            make.top.equalTo.inset(view.frame.length / 4.0)
         }
     }
     
