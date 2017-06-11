@@ -82,11 +82,15 @@ class ImageInfoController: UIViewController {
             make.centerY.equalTo(titleLabel)
         }
         
-        BackendModel.sharedInstance.uploadImage(image: self.image) { word in
+        BackendModel.sharedInstance.uploadImage(image: self.image) { data in
             
             DispatchQueue.main.async {
-                self.infoView.setData(word: word)
-                DatabaseModel.sharedInstance.addWord(word: word)
+                self.infoView.setData(data: data)
+                
+                if let word = data["word"] as? String {
+                    self.word = word
+                    DatabaseModel.sharedInstance.addWord(word: word)
+                }
             }
             
             
