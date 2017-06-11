@@ -6,6 +6,7 @@ from flask_server.api import PingEndpoint, UserEndpoint, ChallengeEndpoint, Twil
 API_VERSION_NUMBER = '1.0'
 API_VERSION_LABEL = 'v1'
 
+TwilioEndpointInstance = TwilioEndpoint()
 
 class CustomFlaskApp(object):
 
@@ -26,7 +27,7 @@ class CustomFlaskApp(object):
         self.api.add_resource(PingEndpoint, '/ping', endpoint='ping')
         self.api.add_resource(UserEndpoint, '/user', endpoint='user')
         self.api.add_resource(ChallengeEndpoint, '/challenge', endpoint='challenge')
-        self.api.add_resource(TwilioEndpoint, '/api/twilio/image_recognition', endpoint='twilio_image_recognition')
+        self.api.add_resource(TwilioEndpointInstance, '/api/twilio/image_recognition', endpoint='twilio_image_recognition')
         self.api.add_resource(IOSEndpoint, '/api/ios/image_recognition', endpoint='ios_image_recognition')
 
     def run(self, *args, **kwargs):

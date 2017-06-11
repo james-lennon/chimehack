@@ -6,6 +6,7 @@ from .errors import JsonInvalidError
 from flask import Response
 import requests
 import json
+import base64
 
 baseUrl = 'https://api.mlab.com/api/1/databases/chimehack'
 headers = {'content-type': 'application/json'}
@@ -23,6 +24,9 @@ class ChallengeEndpoint(Resource):
         fromUser = request.values.get('fromUser', None)
         toUsers = request.values.get('toUsers', None)
         
+        with open("temp.jpg", "wb") as fh:
+            fh.write(base64.b64decode(base64Image))
+
         challengedata = json.dumps(
             {
                 'base64Image': base64Image,
