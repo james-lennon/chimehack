@@ -19,6 +19,8 @@
 		9D7C5DE61EECD88100F306A5 /* ViewedWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DE51EECD88100F306A5 /* ViewedWord.swift */; };
 		9D7C5DE81EECE01C00F306A5 /* LanguageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DE71EECE01C00F306A5 /* LanguageButton.swift */; };
 		9D7C5DED1EECEE3600F306A5 /* CameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DEC1EECEE3600F306A5 /* CameraButton.swift */; };
+		9D7C5DEF1EECF22900F306A5 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DEE1EECF22900F306A5 /* UserController.swift */; };
+		9D7C5DF11EECF23500F306A5 /* WordsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DF01EECF23500F306A5 /* WordsController.swift */; };
 		E4181F5180A4B5C02431EC90 /* Pods_Chimehack_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF05866A26FFDAFEEE2DE08D /* Pods_Chimehack_Mobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		9D7C5DE51EECD88100F306A5 /* ViewedWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewedWord.swift; path = Model/ViewedWord.swift; sourceTree = "<group>"; };
 		9D7C5DE71EECE01C00F306A5 /* LanguageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguageButton.swift; path = View/LanguageButton.swift; sourceTree = "<group>"; };
 		9D7C5DEC1EECEE3600F306A5 /* CameraButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraButton.swift; path = View/CameraButton.swift; sourceTree = "<group>"; };
+		9D7C5DEE1EECF22900F306A5 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = Controller/UserController.swift; sourceTree = "<group>"; };
+		9D7C5DF01EECF23500F306A5 /* WordsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsController.swift; sourceTree = "<group>"; };
 		BF05866A26FFDAFEEE2DE08D /* Pods_Chimehack_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chimehack_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -121,6 +125,8 @@
 			children = (
 				9D7C5DDD1EECC16A00F306A5 /* MainCameraController.swift */,
 				9D7C5DDF1EECC17700F306A5 /* SetupController.swift */,
+				9D7C5DEE1EECF22900F306A5 /* UserController.swift */,
+				9D7C5DF01EECF23500F306A5 /* WordsController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -259,9 +265,11 @@
 				9D7C5DCE1EECC08E00F306A5 /* Chimehack_Mobile.xcdatamodeld in Sources */,
 				9D7C5DC81EECC08E00F306A5 /* ViewController.swift in Sources */,
 				9D7C5DED1EECEE3600F306A5 /* CameraButton.swift in Sources */,
+				9D7C5DEF1EECF22900F306A5 /* UserController.swift in Sources */,
 				9D7C5DE41EECC62300F306A5 /* LanguageModel.swift in Sources */,
 				9D7C5DE61EECD88100F306A5 /* ViewedWord.swift in Sources */,
 				9D7C5DE81EECE01C00F306A5 /* LanguageButton.swift in Sources */,
+				9D7C5DF11EECF23500F306A5 /* WordsController.swift in Sources */,
 				9D7C5DC61EECC08E00F306A5 /* AppDelegate.swift in Sources */,
 				9D7C5DE01EECC17700F306A5 /* SetupController.swift in Sources */,
 				9D7C5DDE1EECC16A00F306A5 /* MainCameraController.swift in Sources */,
