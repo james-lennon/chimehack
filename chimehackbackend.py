@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import requests
 import resource
 import ast
-import unirest
+from google.cloud import translate
 
 def getItem():
 	app = ClarifaiApp("pqVhRqjUHu0x0ouWhuRnzTVR9ve1XyqiqQ0hbzal", "sHUtxZ7NRCSfz75EHbTy6Q9fk9-PGCwe3FKth2cV")
@@ -49,6 +49,3 @@ def getDefinition(objectname):
 	end =  definition.find(".")+1
 	definition = definition[:end]
 	return definition
-
-
-
