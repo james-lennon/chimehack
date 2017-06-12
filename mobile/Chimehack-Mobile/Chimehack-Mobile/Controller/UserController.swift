@@ -44,7 +44,8 @@ class UserController: UIViewController {
         pointsView.backgroundColor = UIColor.cyan
         pointsView.snp.makeConstraints { (make) in
             make.left.equalTo(view)
-            make.width.height.equalTo(view.frame.width / 2.0)
+            make.width.equalTo(view.frame.width / 2.0)
+            make.height.equalTo(view.frame.height / 2.0)
             make.top.equalTo(titleView.snp.bottom)
         }
         let userLabel = UILabel()
@@ -72,6 +73,7 @@ class UserController: UIViewController {
             make.left.bottom.equalTo(view)
             make.top.equalTo(pointsView.snp.bottom)
             make.width.equalTo(view.frame.width / 2.0)
+            make.height.equalTo(view.frame.height / 2.0)
         }
         view.addSubview(challengesButton)
         challengesButton.setImage(#imageLiteral(resourceName: "armmuscle"), for: .normal)
@@ -82,13 +84,26 @@ class UserController: UIViewController {
         }
         challengesButton.center = challengesView.center
         
+        let logoView = UIImageView(image: #imageLiteral(resourceName: "icon-blank"))
+        view.addSubview(logoView)
+        logoView.contentMode = .scaleAspectFit
+        logoView.backgroundColor = UIColor.white
+        logoView.snp.makeConstraints { (make) in
+            make.right.equalTo(view)
+            make.top.equalTo(titleView.snp.bottom)
+            make.width.equalTo(view.frame.width / 2.0)
+            make.height.equalTo(view.frame.height / 2.0)
+        }
+        
         let friendsView = UIView()
         view.addSubview(friendsView)
         friendsView.backgroundColor = UIColor.yellow
         friendsView.snp.makeConstraints { (make) in
             make.right.equalTo(view)
-            make.top.equalTo(challengesView.snp.bottom)
+            make.top.equalTo(logoView.snp.bottom)
+            make.bottom.equalTo(view)
             make.width.equalTo(view.frame.width / 2.0)
+            make.height.equalTo(view.frame.height / 2.0)
         }
         view.addSubview(friendsButton)
         friendsButton.setImage(#imageLiteral(resourceName: "dancinggirl"), for: .normal)
@@ -99,14 +114,6 @@ class UserController: UIViewController {
         }
         friendsButton.center = friendsView.center
         
-        let logoView = UIImageView(image: #imageLiteral(resourceName: "icon-blank"))
-        view.addSubview(logoView)
-        logoView.backgroundColor = UIColor.yellow
-        logoView.snp.makeConstraints { (make) in
-            make.right.equalTo(view)
-            make.top.equalTo(titleView.snp.bottom)
-            make.width.height.equalTo(view.frame.width / 2.0)
-        }
     }
     
     func backPressed() {

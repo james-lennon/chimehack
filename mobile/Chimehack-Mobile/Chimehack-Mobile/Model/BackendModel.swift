@@ -14,6 +14,7 @@ class BackendModel {
     public static let sharedInstance = BackendModel()
     
     
+    public let BASE_URL = "https://39a34bb3.ngrok.io"
     private let UPLOAD_URL = "https://39a34bb3.ngrok.io/api/ios/image_recognition"
     private let CHALLENGE_URL = "https://39a34bb3.ngrok.io/challenge"
     private let SEND_URL = "https://39a34bb3.ngrok.io/challenge"
@@ -52,7 +53,7 @@ class BackendModel {
         Alamofire.request(UPLOAD_URL, method: .post, parameters: data).responseJSON { responseJSON in
             
             if let json = responseJSON.result.value as? [String : Any] {
-                print("JSON: \(json)")
+//                print("JSON: \(json)")
                 
                 callback(json)
             } else {
@@ -101,7 +102,7 @@ class BackendModel {
         Alamofire.request(SEND_URL, method: .post, parameters: data).responseJSON { responseJSON in
             
             if let json = responseJSON.result.value as? [[String : Any]] {
-                print("JSON: \(json)")
+//                print("JSON: \(json)")
                 
                 callback()
             } else {
@@ -117,7 +118,7 @@ class BackendModel {
         Alamofire.request(CHALLENGE_URL, method: .get, parameters: data).responseJSON { responseJSON in
             
             if let json = responseJSON.result.value as? [[String : Any]] {
-                print("JSON: \(json)")
+//                print("JSON: \(json)")
                 
                 let lst = json.map({ Challenge(data: $0) })
                 

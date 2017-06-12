@@ -107,6 +107,7 @@ class SendController: UIViewController {
     }
     
     func sendTapped() {
+        sendButton.isEnabled = false
         BackendModel.sharedInstance.sendChallenge(image: image, word: word, friends: Array(selectedFriends)) {
             print("Sent!!")
             self.dismiss(animated: true, completion: nil)

@@ -107,12 +107,16 @@ class WordsController: UIViewController {
             make.top.equalTo(challengeScrollView.snp.bottom).offset(5)
         }
         
-        let wordViewList = DatabaseModel.sharedInstance.viewedWords().map { (viewedWord) -> UIView in
+        print(DatabaseModel.sharedInstance.viewedWords())
+        
+        var wordViewList = [UIView]()
+        
+        for viewedWord in DatabaseModel.sharedInstance.viewedWords() {
             let v = UIView()
             let label = UILabel()
             v.addSubview(label)
-            label.text = viewedWord.word
-            print(viewedWord.word)
+            label.text = viewedWord.getWord()
+            print(viewedWord.getWord())
             label.sizeToFit()
             label.snp.makeConstraints({ (make) in
                 make.left.equalTo(v).offset(20)
@@ -120,8 +124,24 @@ class WordsController: UIViewController {
                 make.size.equalTo(label)
             })
             
-            return v
+            wordViewList.append(v)
         }
+        
+//        let wordViewList = DatabaseModel.sharedInstance.viewedWords().map { (viewedWord) -> UIView in
+//            let v = UIView()
+//            let label = UILabel()
+//            v.addSubview(label)
+//            label.text = viewedWord.word
+//            print(viewedWord.word)
+//            label.sizeToFit()
+//            label.snp.makeConstraints({ (make) in
+//                make.left.equalTo(v).offset(20)
+//                make.centerY.equalTo(v)
+//                make.size.equalTo(label)
+//            })
+//            
+//            return v
+//        }
         
         let wordsView = ListView(subviewList: wordViewList, componentHeight: 60)
         view.addSubview(wordsView)

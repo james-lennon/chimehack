@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DGActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Chimehack-Mobile.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyGif.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +47,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3D8E2AF02C1A901AB18EBAF59840B0CE</key>
+		<key>09C27EBA999CD3BD534EA5B292093B00</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7AA640600DA3C01654E96527D3213B76</key>
+		<key>0C007AAACAAB1EBB25B78596B488CDD9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0CB54D01278217A4FF97824C503B0A72</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3814077B60A225441E135CD435F07186</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7730BCB99E09750681DCC10E7A9376C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,17 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9CF8A56C6DE00C5D1EF9B7B122A71EC8</key>
+		<key>B037E1CE88929C0C712C9B0FC3BC26B2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CC5E2460D2A3A7299D0B84601CB8DE48</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DE5D9D014EA637976FA2F367C15D1D53</key>
+		<key>B6868F9EF06F5189C2E5D15A3C10B64D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

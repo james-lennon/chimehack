@@ -6,7 +6,10 @@
 //  Copyright © 2017 James Lennon. All rights reserved.
 //
 
+import AVFoundation
 import UIKit
+import SwiftyGif
+import DGActivityIndicatorView
 
 class ImageInfoView: UIView {
     
@@ -15,7 +18,11 @@ class ImageInfoView: UIView {
     private let sendButton = UIButton()
     private let speakButton = UIButton()
     
+    private let indicator = DGActivityIndicatorView(type: .doubleBounce, tintColor: UIColor.lightGray)!
+    
     private let onSend : ()->()
+    
+    private var word: String? = nil
     
     init(onSend: @escaping ()->()) {
         
@@ -28,11 +35,20 @@ class ImageInfoView: UIView {
         
         /* Extra Content */
         
-        
+        addSubview(indicator)
+        indicator.snp.makeConstraints { (make) in
+            make.width.height.equalTo(50)
+            make.centerX.equalTo(self)
+            make.top.equalTo(self).offset(20)
+        }
+        indicator.startAnimating()
+//        indicator.backgroundColor = UIColor.green
         
     }
     
     public func setData(data: [String : Any]) {
+        
+        indicator.stopAnimating()
         
         var word = data["vocab"] as? String ?? ""
         var t_word = data["t_vocab"] as? String ?? ""
@@ -44,6 +60,8 @@ class ImageInfoView: UIView {
         if word == "no person" {
             word = "not hotdog"
         }
+        
+        self.word = word
         
         let font = UIFont.systemFont(ofSize: 30)
         
@@ -113,11 +131,27 @@ class ImageInfoView: UIView {
             make.top.equalTo(dividerView).offset(20)
         }
         
-        
         let t_sentLabel = UILabel()
+        addSubview(t_sentLabel)
         t_sentLabel.text = t_sentence
+        t_sentLabel.numberOfLines = 0
+        t_sentLabel.snp.makeConstraints { (make) in
+            make.height.equalTo(100)
+            make.left.right.equalTo(self).inset(30)
+            make.top.equalTo(sentLabel.snp.bottom).offset(20)
+        }
         
         
+//        let gifImg = UIImage
+//        let gifImg = UIImage(gif) //UIImage.gifImageWithURL(gifUrl: BackendModel.sharedInstance.BASE_URL + gif)
+//        let imgView = UIImageView(image: gifImg)
+//        
+//        addSubview(imgView)
+//        imgView.snp.makeConstraints { (make) in
+//            make.left.right.equalTo(self).inset(10)
+//            make.top.equalTo(sentLabel.snp.bottom).offset(10)
+//            make.height.equalTo(200)
+//        }
 
     }
     
@@ -130,7 +164,14 @@ class ImageInfoView: UIView {
     }
     
     func speakTapped() {
-        
+        speakWord(word: self.word ?? "")
+    }
+    
+    func speakWord(word: String){
+        let synthesizer = AVSpeechSynthesizer()
+        let utterance = AVSpeechUtterance(string: word)
+        utterance.rate = 0.2
+        synthesizer.speak(utterance)
     }
     
 }

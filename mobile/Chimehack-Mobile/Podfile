@@ -7,5 +7,7 @@ target 'Chimehack-Mobile' do
     pod 'RealmSwift'
     pod 'Alamofire', '~> 4.4'
     pod 'pop', '~> 1.0'
+    pod 'SwiftyGif'
+    pod 'DGActivityIndicatorView'
 end
 

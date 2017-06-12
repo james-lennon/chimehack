@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D0320DD1EEDC46300F8ABCC /* GIF-Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0320DC1EEDC46300F8ABCC /* GIF-Swift.swift */; };
 		9D206DB11EED1A4B002918BB /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D206DB01EED1A4B002918BB /* FriendView.swift */; };
 		9D7C5DC61EECC08E00F306A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DC51EECC08E00F306A5 /* AppDelegate.swift */; };
 		9D7C5DC81EECC08E00F306A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C5DC71EECC08E00F306A5 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		2376E989F91C3FFCB984EDD0 /* Pods-Chimehack-Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chimehack-Mobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chimehack-Mobile/Pods-Chimehack-Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		7D53A0D57C1B3912AA9B97F0 /* Pods-Chimehack-Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chimehack-Mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chimehack-Mobile/Pods-Chimehack-Mobile.debug.xcconfig"; sourceTree = "<group>"; };
+		9D0320DC1EEDC46300F8ABCC /* GIF-Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GIF-Swift.swift"; path = "View/GIF-Swift.swift"; sourceTree = "<group>"; };
 		9D206DB01EED1A4B002918BB /* FriendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendView.swift; path = View/FriendView.swift; sourceTree = "<group>"; };
 		9D7C5DC21EECC08E00F306A5 /* Chimehack-Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chimehack-Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7C5DC51EECC08E00F306A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				9DFAAD7E1EED140D00BDBE28 /* ListView.swift */,
 				9D206DB01EED1A4B002918BB /* FriendView.swift */,
 				9DD76EAB1EEDAFC7005EABCF /* BlockTapView.swift */,
+				9D0320DC1EEDC46300F8ABCC /* GIF-Swift.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				9DFAAD7B1EED03BA00BDBE28 /* ImageInfoView.swift in Sources */,
 				9DFAAD791EED037E00BDBE28 /* ImageInfoController.swift in Sources */,
 				9DD76EA81EEDA8DE005EABCF /* Challenge.swift in Sources */,
+				9D0320DD1EEDC46300F8ABCC /* GIF-Swift.swift in Sources */,
 				9D7C5DE61EECD88100F306A5 /* ViewedWord.swift in Sources */,
 				9DD76EA41EED1C03005EABCF /* SendController.swift in Sources */,
 				9D7C5DE81EECE01C00F306A5 /* LanguageButton.swift in Sources */,

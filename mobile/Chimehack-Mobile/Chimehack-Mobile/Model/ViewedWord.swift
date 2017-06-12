@@ -14,4 +14,8 @@ class ViewedWord: Object {
     public var word : String = ""
     public var viewCount : Int = 0
     
+    public func getWord() -> String {
+        return word
+    }
+    
 }
